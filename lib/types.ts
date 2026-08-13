@@ -104,6 +104,7 @@ export interface Quote {
   status: "draft" | "sent" | "accepted" | "declined" | "expired";
   convertedToInvoiceId?: string;
   createdAt: string;
+  includeMaintenancePlans?: boolean; // default false — toggles the Maintenance & Support Plans section
 }
 
 export interface InvoiceItem {

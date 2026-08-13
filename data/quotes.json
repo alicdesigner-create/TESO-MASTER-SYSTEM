@@ -372,5 +372,79 @@
     "createdAt": "2026-08-08T05:17:23.035Z",
     "updatedAt": "2026-08-08T23:09:10.930Z",
     "convertedToInvoiceId": "mskzjtyxd601c"
+  },
+  {
+    "clientId": "msqv5oskexcj2",
+    "date": "2026-08-12",
+    "validDays": 30,
+    "status": "sent",
+    "taxRate": 0,
+    "taxAmount": 0,
+    "subtotal": 2326,
+    "total": 2326,
+    "notes": "Website + Landing Page Maintenance — $170/month\nIncludes ongoing website and landing page maintenance, updates, design adjustments, and basic corporate email assistance.\nGoogle Workspace/email fees are not included.\n\nLanding Page Only Maintenance — $40/month\nFor clients who choose the Landing Page + QR Code service without website maintenance. Includes landing page updates and basic adjustments.\n\nHosting-Only Option — $160 / 2 years\nIncludes website hosting only. Website or landing page updates, design changes, or technical assistance are billed at $35/hour.",
+    "items": [
+      {
+        "id": "msqv61gqz2b1",
+        "qty": 1,
+        "description": "Professional Logo Design (3 design options)",
+        "unitPrice": 210,
+        "status": "in_progress"
+      },
+      {
+        "id": "msqv61gqqlap",
+        "qty": 500,
+        "description": "Business Cards (Design + Printing)   (3 design options)",
+        "unitPrice": 0.38,
+        "status": "in_progress"
+      },
+      {
+        "id": "msqv61gq6xnf",
+        "qty": 1,
+        "description": "Landing Page + QR Code Setup ($40 monthly maintenance)",
+        "unitPrice": 200,
+        "status": "in_progress"
+      },
+      {
+        "id": "msqv61gqgb0v",
+        "qty": 1,
+        "description": "Half-Letter Flyer Design (1 face only)",
+        "unitPrice": 75
+      },
+      {
+        "id": "msqv61gqhqha",
+        "qty": 1000,
+        "description": "Flyer Printing 5.5\" × 8.5\" (80 lb Gloss Book)",
+        "unitPrice": 0.14
+      },
+      {
+        "id": "msqv61gq9hjv",
+        "qty": 1,
+        "description": "Corporate Website Design & Setup",
+        "unitPrice": 999
+      },
+      {
+        "id": "msqv61gqyb3e",
+        "qty": 1,
+        "description": "Corporate Email Setup ej: dj@Vanndservices.com  (1–2 emails, domain required + monthly payment of $8 to $16)",
+        "unitPrice": 180
+      },
+      {
+        "id": "msqv61gqwbkc",
+        "qty": 1,
+        "description": "Google Business Profile Setup",
+        "unitPrice": 300
+      },
+      {
+        "id": "msqv9mj4",
+        "qty": 1,
+        "description": "Domain purchase (Vanndservices.com) x 2 years",
+        "unitPrice": 32
+      }
+    ],
+    "id": "msqv61h3qdai0",
+    "quoteNumber": "2026-017",
+    "createdAt": "2026-08-13T01:53:06.039Z",
+    "updatedAt": "2026-08-13T02:31:08.892Z"
   }
 ]

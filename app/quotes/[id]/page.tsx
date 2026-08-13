@@ -12,6 +12,7 @@ import { useNavigationGuard } from "@/contexts/NavigationGuard";
 import { apiFetch } from "@/lib/api";
 import { convertQuoteToInvoice, CONVERTIBLE_QUOTE_STATUSES } from "@/lib/quoteToInvoice";
 import { todayISO } from "@/lib/date";
+import { MAINTENANCE_PLANS, MAINTENANCE_NOTES, HOSTING_ONLY, MAINTENANCE_DISCLAIMER } from "@/lib/maintenancePlans";
 
 const QuoteDownloadButton = dynamic(() => import("@/components/pdf/QuoteDownloadButton"), { ssr: false });
 
@@ -29,6 +30,7 @@ export default function QuoteDetailPage() {
     items: [],
     subtotal: 0,
     total: 0,
+    includeMaintenancePlans: false,
   });
   const [loading, setLoading] = useState(false);
   const [hasUnsaved, setHasUnsaved] = useState(false);
@@ -271,6 +273,125 @@ export default function QuoteDetailPage() {
               </div>
             </div>
           </div>
+        </Card>
+
+        {/* Maintenance & Support Plans (optional, toggled per quote) */}
+        <Card>
+          <label style={{ display: "flex", alignItems: "flex-start", gap: 10, cursor: "pointer", marginBottom: form.includeMaintenancePlans ? 14 : 0 }}>
+            <input
+              type="checkbox"
+              checked={form.includeMaintenancePlans ?? false}
+              onChange={(e) => { setHasUnsaved(true); setForm({ ...form, includeMaintenancePlans: e.target.checked }); }}
+              style={{ marginTop: 3, width: 15, height: 15, accentColor: "var(--beige)", cursor: "pointer" }}
+            />
+            <div>
+              <h3 style={{ margin: 0, fontSize: 13, fontWeight: 600, color: "var(--text-primary)" }}>Add Maintenance & Support Plans</h3>
+              <p style={{ margin: "4px 0 0", fontSize: 11.5, color: "var(--text-muted)" }}>
+                {form.includeMaintenancePlans
+                  ? "Included in the PDF, after the total and before the terms/notes section."
+                  : "Off by default. Turn on to include the maintenance plans section in this quote's PDF."}
+              </p>
+            </div>
+          </label>
+
+          {form.includeMaintenancePlans && (
+          <div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
+            {MAINTENANCE_PLANS.map((plan) => (
+              <div
+                key={plan.name}
+                style={{
+                  border: plan.featured ? "1.5px solid var(--carbon)" : "1px solid var(--border)",
+                  borderRadius: 8,
+                  padding: 14,
+                  backgroundColor: plan.featured ? "var(--input-bg)" : "var(--bg-card)",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                {plan.badge && (
+                  <span
+                    style={{
+                      alignSelf: "flex-start",
+                      backgroundColor: "var(--carbon)",
+                      color: "var(--beige)",
+                      fontSize: 9.5,
+                      fontWeight: 700,
+                      letterSpacing: 0.5,
+                      textTransform: "uppercase",
+                      padding: "3px 8px",
+                      borderRadius: 4,
+                      marginBottom: 8,
+                    }}
+                  >
+                    {plan.badge}
+                  </span>
+                )}
+                <div style={{ fontSize: 12.5, fontWeight: 700, color: "var(--text-primary)", textTransform: "uppercase", letterSpacing: 0.3 }}>{plan.name}</div>
+                <div style={{ margin: "6px 0 10px", display: "flex", alignItems: "baseline", gap: 4 }}>
+                  <span style={{ fontSize: 22, fontWeight: 700, color: "var(--text-primary)" }}>{plan.price}</span>
+                  <span style={{ fontSize: 11.5, color: "var(--text-muted)" }}>{plan.unit}</span>
+                </div>
+                <ul style={{ margin: 0, padding: 0, listStyle: "none", flex: 1 }}>
+                  {plan.features.map((f, i) => (
+                    <li key={i} style={{ fontSize: 11.5, color: "var(--text-primary)", lineHeight: 1.6, display: "flex", gap: 6 }}>
+                      <span style={{ color: "var(--beige)" }}>•</span> {f}
+                    </li>
+                  ))}
+                </ul>
+                {plan.note && (
+                  <p style={{ fontSize: 10.5, color: "var(--text-muted)", fontStyle: "italic", lineHeight: 1.5, marginTop: 10, paddingTop: 8, borderTop: "1px solid var(--border)" }}>
+                    {plan.note}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Hosting-only, visually separated */}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: 10,
+              border: "1px dashed var(--border)",
+              borderRadius: 8,
+              padding: "12px 16px",
+              marginTop: 14,
+              backgroundColor: "var(--input-bg)",
+            }}
+          >
+            <div style={{ maxWidth: 460 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 0.6, marginBottom: 3 }}>
+                {HOSTING_ONLY.label}
+              </div>
+              <div style={{ fontSize: 11.5, color: "var(--text-muted)", lineHeight: 1.5 }}>
+                {HOSTING_ONLY.description}
+              </div>
+            </div>
+            <div style={{ textAlign: "right" }}>
+              <div style={{ fontSize: 18, fontWeight: 700, color: "var(--text-primary)" }}>{HOSTING_ONLY.price}</div>
+              <div style={{ fontSize: 10.5, color: "var(--text-muted)" }}>{HOSTING_ONLY.unit}</div>
+            </div>
+          </div>
+
+          <div style={{ marginTop: 12, padding: "8px 12px", borderLeft: "2px solid var(--beige)", backgroundColor: "var(--input-bg)", borderRadius: 4 }}>
+            <p style={{ margin: 0, fontSize: 10.5, color: "var(--text-muted)", lineHeight: 1.5 }}>
+              {MAINTENANCE_DISCLAIMER}
+            </p>
+          </div>
+
+          <ul style={{ margin: "12px 0 0", padding: 0, listStyle: "none" }}>
+            {MAINTENANCE_NOTES.map((n, i) => (
+              <li key={i} style={{ fontSize: 10.5, color: "var(--text-muted)", lineHeight: 1.6, display: "flex", gap: 6 }}>
+                <span>•</span> {n}
+              </li>
+            ))}
+          </ul>
+          </div>
+          )}
         </Card>
 
         {/* Notes */}
