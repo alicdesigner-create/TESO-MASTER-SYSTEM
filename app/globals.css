@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* === LIGHT THEME === */
+
+  /* Backgrounds */
+  --bg-page: #f7f5f2;
+  --bg-card: #ffffff;
+  --bg-sidebar: #1f2024;
+  --input-bg: #f0ece6;
+
+  /* Borders */
+  --border: #e3e0db;
+
+  /* Typography */
+  --text-primary: #2b2a28;
+  --text-muted: #8a8680;
+
+  /* Accent (Teso beige — unchanged) */
+  --beige: #c8b299;
+  --accent-dark: #a8896d;
+
+  /* Dark (for button text on beige, avatar letters, etc.) */
+  --carbon: #202120;
+
+  /* Legacy remaps — keep old names so existing components work */
+  --carbon-light: #ffffff;   /* was dark card; now white card */
+  --carbon-mid: #e3e0db;     /* was dark border/input; now light border */
+
+  /* Solid status colors (for text, icons, left-borders on light bg) */
+  --status-green:  #3a9b6f;
+  --status-red:    #c0392b;
+  --status-yellow: #8a6d1f;
+  --status-blue:   #2f6fad;
+
+  /* Semantic aliases */
+  --green: #3a9b6f;
+  --yellow: #8a6d1f;
+  --red:   #c0392b;
+  --blue:  #2f6fad;
+
+  /* Badge / alert bg+text pairs */
+  --green-bg:   #e8f5ef;  --green-text:   #3a9b6f;
+  --yellow-bg:  #fdf4d8;  --yellow-text:  #8a6d1f;
+  --red-bg:     #fbeaea;  --red-text:     #c0392b;
+  --blue-bg:    #e8f0fa;  --blue-text:    #2f6fad;
+  --neutral-bg: #f5f4f2;  --neutral-text: #78716c;
+
+  /* Sidebar-specific (stays dark, always light text) */
+  --sidebar-text:   #f0ece6;
+  --sidebar-muted:  #9a9590;
+  --sidebar-border: rgba(255,255,255,0.08);
+  --sidebar-active-bg: rgba(200,178,153,0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+input, textarea, select {
+  background-color: var(--input-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--beige) !important;
+}
+
+/* Status pill selects (quote item status) — must win over the generic `select` rule above */
+select.status-select-pending     { background-color: #c8b299 !important; color: #202120 !important; }
+select.status-select-approved    { background-color: #3a9060 !important; color: #ffffff !important; }
+select.status-select-in_progress { background-color: #3b82f6 !important; color: #ffffff !important; }
+select.status-select-done        { background-color: #1f6b41 !important; color: #ffffff !important; }
+select.status-select-rejected    { background-color: #c94040 !important; color: #ffffff !important; }

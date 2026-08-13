@@ -1,0 +1,400 @@
+[
+  {
+    "id": "proj-msc-001",
+    "clientId": "client-jennifer",
+    "typeOfDesign": "Web Design",
+    "status": "done",
+    "statusNote": "90% done - redirect emails to Jennifer",
+    "quotedPrice": 700,
+    "extraCharge": 90,
+    "extraChargeNote": "Photos edition",
+    "paymentNote": "$13 transfer domain",
+    "createdAt": "2026-02-04",
+    "updatedAt": "2026-06-23T05:09:59.287Z"
+  },
+  {
+    "id": "proj-msc-002",
+    "clientId": "client-jennifer",
+    "typeOfDesign": "Landing Page",
+    "status": "done",
+    "statusNote": "Done 2/4/26",
+    "quotedPrice": 200,
+    "extraCharge": 40,
+    "extraChargeNote": "Ongoing maintenance every 4th = $40",
+    "createdAt": "2026-02-04",
+    "updatedAt": "2026-02-04"
+  },
+  {
+    "id": "proj-msc-003",
+    "clientId": "client-jennifer",
+    "typeOfDesign": "Business Cards (500 units)",
+    "status": "done",
+    "statusNote": "Done 2/4/26",
+    "quotedPrice": 65,
+    "extraCharge": 60,
+    "extraChargeNote": "Design",
+    "createdAt": "2026-02-04",
+    "updatedAt": "2026-02-04"
+  },
+  {
+    "id": "proj-msc-004",
+    "clientId": "client-jennifer",
+    "typeOfDesign": "Google Business Profile Setup",
+    "status": "pending",
+    "quotedPrice": 300,
+    "createdAt": "2026-02-04",
+    "updatedAt": "2026-02-04"
+  },
+  {
+    "id": "proj-msc-005",
+    "clientId": "client-jennifer",
+    "typeOfDesign": "Flyer - Rec Center Shine",
+    "status": "done",
+    "quotedPrice": 70,
+    "createdAt": "2026-02-04",
+    "updatedAt": "2026-06-23T05:10:08.878Z"
+  },
+  {
+    "id": "proj-msc-006",
+    "clientId": "client-jennifer",
+    "typeOfDesign": "Flyer - Residential Cleaning (Design)",
+    "status": "done",
+    "statusNote": "DONE 100% 3/11/26",
+    "quotedPrice": 56,
+    "extraCharge": 40,
+    "extraChargeNote": "QR Code",
+    "paymentNote": "PAGADO",
+    "createdAt": "2026-03-11",
+    "updatedAt": "2026-03-11"
+  },
+  {
+    "id": "proj-msc-008",
+    "clientId": "client-jennifer",
+    "typeOfDesign": "Flyer",
+    "status": "done",
+    "statusNote": "Jennifer decide",
+    "quotedPrice": 76,
+    "extraCharge": 216,
+    "extraChargeNote": "Print 1000 units",
+    "createdAt": "2026-03-11",
+    "updatedAt": "2026-06-23T05:11:19.950Z"
+  },
+  {
+    "id": "proj-msc-009",
+    "clientId": "client-jennifer",
+    "typeOfDesign": "Corporate Email Setup",
+    "status": "done",
+    "statusNote": "NO SE HA HECHO",
+    "quotedPrice": 100,
+    "extraCharge": 8.52,
+    "createdAt": "2026-02-04",
+    "updatedAt": "2026-06-23T05:12:03.294Z"
+  },
+  {
+    "id": "proj-dulce-001",
+    "clientId": "client-dulce",
+    "typeOfDesign": "Web Design",
+    "status": "done",
+    "statusNote": "Advanced at 90% - form needs SMS integration",
+    "quotedPrice": 370,
+    "paymentNote": "CHARGE ONLY $40 MONTHLY + LABOR IF NEEDED",
+    "createdAt": "2026-03-14",
+    "updatedAt": "2026-06-23T05:11:37.507Z"
+  },
+  {
+    "id": "proj-dulce-002",
+    "clientId": "client-dulce",
+    "typeOfDesign": "Logo Design",
+    "status": "pending",
+    "quotedPrice": 160,
+    "createdAt": "2026-03-14",
+    "updatedAt": "2026-03-14"
+  },
+  {
+    "id": "proj-dulce-003",
+    "clientId": "client-dulce",
+    "typeOfDesign": "Business Cards (500 units)",
+    "status": "pending",
+    "statusNote": "Needs approval",
+    "quotedPrice": 80,
+    "createdAt": "2026-03-14",
+    "updatedAt": "2026-03-14"
+  },
+  {
+    "id": "proj-dulce-004",
+    "clientId": "client-dulce",
+    "typeOfDesign": "Landing Page",
+    "status": "done",
+    "quotedPrice": 200,
+    "extraCharge": 40,
+    "extraChargeNote": "$40 monthly maintenance",
+    "paymentNote": "CHARGE ONLY $40 MONTHLY + LABOR IF NEEDED",
+    "createdAt": "2026-03-14",
+    "updatedAt": "2026-03-14"
+  },
+  {
+    "id": "proj-dulce-005",
+    "clientId": "client-dulce",
+    "typeOfDesign": "Domain Purchase - emberbservices.com",
+    "status": "done",
+    "quotedPrice": 31.38,
+    "extraCharge": 15,
+    "createdAt": "2026-03-14",
+    "updatedAt": "2026-03-14"
+  },
+  {
+    "id": "proj-andres-001",
+    "clientId": "client-andres",
+    "typeOfDesign": "Professional Logo Design",
+    "status": "done",
+    "statusNote": "Done",
+    "quotedPrice": 200,
+    "paymentNote": "Paid 50% on May 26",
+    "createdAt": "2026-05-15",
+    "updatedAt": "2026-05-26"
+  },
+  {
+    "id": "proj-andres-002",
+    "clientId": "client-andres",
+    "typeOfDesign": "Business Cards (500 units) + Print",
+    "status": "done",
+    "statusNote": "Design done - printing pending",
+    "quotedPrice": 180,
+    "paymentNote": "Paid 50% on May 26",
+    "createdAt": "2026-05-15",
+    "updatedAt": "2026-06-23T05:09:29.352Z"
+  },
+  {
+    "id": "proj-andres-003",
+    "clientId": "client-andres",
+    "typeOfDesign": "Landing Page",
+    "status": "done",
+    "statusNote": "Done",
+    "quotedPrice": 200,
+    "paymentNote": "Paid 50% on May 26",
+    "createdAt": "2026-05-15",
+    "updatedAt": "2026-06-08"
+  },
+  {
+    "id": "proj-andres-004",
+    "clientId": "client-andres",
+    "typeOfDesign": "Flyer",
+    "status": "done",
+    "quotedPrice": 70,
+    "createdAt": "2026-05-15",
+    "updatedAt": "2026-06-23T05:12:22.428Z"
+  },
+  {
+    "id": "proj-andres-005",
+    "clientId": "client-andres",
+    "typeOfDesign": "Flyer Print 5.5x8.5 (1000 units, 80lb Gloss)",
+    "status": "pending",
+    "quotedPrice": 125,
+    "createdAt": "2026-05-15",
+    "updatedAt": "2026-05-15"
+  },
+  {
+    "id": "proj-andres-006",
+    "clientId": "client-andres",
+    "typeOfDesign": "Corporate Website Design",
+    "status": "pending",
+    "quotedPrice": 999,
+    "createdAt": "2026-05-15",
+    "updatedAt": "2026-05-15"
+  },
+  {
+    "id": "proj-andres-007",
+    "clientId": "client-andres",
+    "typeOfDesign": "Corporate Email Setup (1 email + domain)",
+    "status": "done",
+    "statusNote": "Done: only 1 email and 1 domain",
+    "quotedPrice": 180,
+    "paymentNote": "Paid 50% on May 26",
+    "createdAt": "2026-06-08",
+    "updatedAt": "2026-06-08"
+  },
+  {
+    "id": "proj-andres-008",
+    "clientId": "client-andres",
+    "typeOfDesign": "Google Business Profile Setup",
+    "status": "pending",
+    "quotedPrice": 300,
+    "createdAt": "2026-05-15",
+    "updatedAt": "2026-05-15"
+  },
+  {
+    "id": "proj-kg-001",
+    "clientId": "client-debbie",
+    "typeOfDesign": "Other",
+    "status": "pending",
+    "statusNote": "90% done",
+    "quotedPrice": 7500,
+    "extraCharge": 200,
+    "extraChargeNote": "$200/mo to keep online",
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-06-23T05:21:07.602Z"
+  },
+  {
+    "id": "proj-kg-002",
+    "clientId": "client-debbie",
+    "typeOfDesign": "Germ Eviction - Logo",
+    "status": "in_progress",
+    "quotedPrice": 0,
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-06-23T05:25:13.153Z"
+  },
+  {
+    "id": "proj-kg-003",
+    "clientId": "client-debbie",
+    "typeOfDesign": "Germ Eviction - Business Cards",
+    "status": "pending",
+    "quotedPrice": 0,
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-01-01"
+  },
+  {
+    "id": "proj-kg-004",
+    "clientId": "client-debbie",
+    "typeOfDesign": "Germ Eviction - Flyer",
+    "status": "pending",
+    "quotedPrice": 0,
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-01-01"
+  },
+  {
+    "id": "proj-kg-005",
+    "clientId": "client-debbie",
+    "typeOfDesign": "Germ Eviction - Website",
+    "status": "pending",
+    "quotedPrice": 0,
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-01-01"
+  },
+  {
+    "id": "proj-era-001",
+    "clientId": "client-jesse",
+    "typeOfDesign": "Website (5 pages)",
+    "status": "pending",
+    "statusNote": "Need to edit video",
+    "quotedPrice": 700,
+    "extraCharge": 50,
+    "extraChargeNote": "$50/month maintenance",
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-06-23T05:32:49.407Z",
+    "paymentNote": "$30.00 for monthly maintenance"
+  },
+  {
+    "id": "proj-villasand-001",
+    "clientId": "client-henry",
+    "typeOfDesign": "Logo Design",
+    "status": "done",
+    "statusNote": "Paid 50% on 3/24/26",
+    "quotedPrice": 160,
+    "createdAt": "2026-03-24",
+    "updatedAt": "2026-03-27"
+  },
+  {
+    "id": "proj-villasand-002",
+    "clientId": "client-henry",
+    "typeOfDesign": "Business Cards + Print (500 units)",
+    "status": "done",
+    "statusNote": "Design done 3/27",
+    "quotedPrice": 120,
+    "createdAt": "2026-03-24",
+    "updatedAt": "2026-06-23T05:28:54.727Z"
+  },
+  {
+    "id": "proj-villasand-003",
+    "clientId": "client-henry",
+    "typeOfDesign": "Landing Page",
+    "status": "cancelled",
+    "statusNote": "Design done 3/27",
+    "quotedPrice": 200,
+    "createdAt": "2026-03-24",
+    "updatedAt": "2026-06-23T05:29:27.622Z"
+  },
+  {
+    "id": "proj-villasand-004",
+    "clientId": "client-henry",
+    "typeOfDesign": "Flyer",
+    "status": "done",
+    "statusNote": "Design done 4/10",
+    "quotedPrice": 60,
+    "createdAt": "2026-03-24",
+    "updatedAt": "2026-06-23T05:29:37.782Z"
+  },
+  {
+    "id": "proj-villasand-005",
+    "clientId": "client-henry",
+    "typeOfDesign": "Flyer",
+    "status": "done",
+    "statusNote": "Design done 4/10",
+    "quotedPrice": 125,
+    "createdAt": "2026-03-24",
+    "updatedAt": "2026-06-23T05:29:49.503Z"
+  },
+  {
+    "id": "proj-villasand-006",
+    "clientId": "client-henry",
+    "typeOfDesign": "Vehicle Wrap Design",
+    "status": "done",
+    "statusNote": "Design done 4/10",
+    "quotedPrice": 96,
+    "createdAt": "2026-03-24",
+    "updatedAt": "2026-06-23T05:30:04.784Z"
+  },
+  {
+    "id": "proj-jon-001",
+    "clientId": "client-jon",
+    "typeOfDesign": "Website Design",
+    "status": "in_progress",
+    "statusNote": "done",
+    "quotedPrice": 1000,
+    "extraCharge": 200,
+    "extraChargeNote": "Hosting 3 years - renew on may 2028",
+    "paymentNote": "todo pago",
+    "createdAt": "2026-04-18",
+    "updatedAt": "2026-06-23T05:30:55.792Z"
+  },
+  {
+    "id": "proj-cody-001",
+    "clientId": "client-cody",
+    "typeOfDesign": "Website Design",
+    "status": "cancelled",
+    "statusNote": "50% done",
+    "quotedPrice": 300,
+    "paymentNote": "NO HA PAGADO",
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-06-23T05:31:29.764Z"
+  },
+  {
+    "id": "proj-cody-002",
+    "clientId": "client-cody",
+    "typeOfDesign": "Logo Design",
+    "status": "cancelled",
+    "statusNote": "100% done",
+    "quotedPrice": 0,
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-06-23T05:31:34.544Z"
+  },
+  {
+    "id": "proj-cody-003",
+    "clientId": "client-cody",
+    "typeOfDesign": "Sign Design",
+    "status": "cancelled",
+    "statusNote": "Changes pending",
+    "quotedPrice": 0,
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-06-23T05:31:40.546Z"
+  },
+  {
+    "id": "proj-cody-004",
+    "clientId": "client-cody",
+    "typeOfDesign": "QR Code to Website",
+    "status": "cancelled",
+    "statusNote": "100% done",
+    "quotedPrice": 0,
+    "createdAt": "2026-01-01",
+    "updatedAt": "2026-06-23T05:31:45.339Z"
+  }
+]

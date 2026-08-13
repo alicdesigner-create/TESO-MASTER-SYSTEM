@@ -1,0 +1,190 @@
+[
+  {
+    "id": "web-teso-001",
+    "clientId": "alirio",
+    "url": "tesographics.com",
+    "type": "website",
+    "createdAt": "2026-02-04",
+    "initialCost": 0,
+    "maintenanceType": "none",
+    "paymentMethod": "NA",
+    "status": "active",
+    "monthlyPayments": {}
+  },
+  {
+    "id": "web-teso-002",
+    "clientId": "alirio",
+    "url": "tesographics-landingpage.vercel.app",
+    "type": "landing_page",
+    "createdAt": "2026-02-04",
+    "initialCost": 0,
+    "maintenanceType": "none",
+    "paymentMethod": "NA",
+    "status": "active",
+    "monthlyPayments": {}
+  },
+  {
+    "id": "web-jennifer-001",
+    "clientId": "client-jennifer",
+    "url": "midnightshinecleaners.com",
+    "type": "website",
+    "createdAt": "2026-02-04",
+    "initialCost": 700,
+    "maintenanceType": "monthly",
+    "maintenanceRate": 170,
+    "maintenanceDay": 4,
+    "paymentMethod": "Zelle",
+    "status": "active",
+    "notes": "$170 combo (web + landing page). Cobrar cada 4to del mes.",
+    "monthlyPayments": {
+      "2026-04": {
+        "amount": 170,
+        "paid": true
+      },
+      "2026-05": {
+        "amount": 170,
+        "paid": true
+      },
+      "2026-06": {
+        "amount": 170,
+        "paid": true,
+        "paidAt": "2026-06-11T03:16:07.862Z"
+      }
+    }
+  },
+  {
+    "id": "web-jennifer-002",
+    "clientId": "client-jennifer",
+    "url": "hihello.com/app/2/cards/v0p0ZINdW46rpa20Wwse",
+    "type": "digital_card",
+    "createdAt": "2026-02-04",
+    "initialCost": 200,
+    "maintenanceType": "monthly",
+    "maintenanceRate": 0,
+    "maintenanceDay": 4,
+    "paymentMethod": "Zelle",
+    "status": "active",
+    "notes": "Incluido en el $170 combo con website",
+    "monthlyPayments": {
+      "2026-06": {
+        "amount": 0,
+        "paid": true,
+        "paidAt": "2026-06-11T03:16:14.942Z"
+      }
+    }
+  },
+  {
+    "id": "web-dulce-001",
+    "clientId": "client-dulce",
+    "url": "emberbservices.com",
+    "type": "website",
+    "createdAt": "2026-03-14",
+    "initialCost": 200,
+    "maintenanceType": "hourly",
+    "maintenanceRate": 40,
+    "maintenanceDay": 15,
+    "paymentMethod": "Zelle",
+    "status": "active",
+    "notes": "$40 monthly + labor if needed. Cobrar el 15 de cada mes.",
+    "monthlyPayments": {
+      "2026-04": {
+        "amount": 40,
+        "paid": true
+      },
+      "2026-05": {
+        "amount": 40,
+        "paid": true
+      }
+    }
+  },
+  {
+    "id": "web-dulce-002",
+    "clientId": "client-dulce",
+    "url": "ember-landingpage.vercel.app",
+    "type": "landing_page",
+    "createdAt": "2026-03-14",
+    "initialCost": 300,
+    "maintenanceType": "monthly",
+    "maintenanceRate": 40,
+    "maintenanceDay": 15,
+    "paymentMethod": "Zelle",
+    "status": "active",
+    "notes": "Incluido en el $40 combo con website",
+    "monthlyPayments": {
+      "2026-06": {
+        "amount": 40,
+        "paid": true,
+        "paidAt": "2026-06-11T03:16:29.090Z"
+      }
+    }
+  },
+  {
+    "id": "web-henry-001",
+    "clientId": "client-henry",
+    "url": "villasand-group-landing.vercel.app",
+    "type": "landing_page",
+    "createdAt": "2026-03-27",
+    "initialCost": 200,
+    "maintenanceType": "monthly",
+    "maintenanceRate": 40,
+    "maintenanceDay": 27,
+    "paymentMethod": "Zelle",
+    "status": "cancelled",
+    "cancelledAt": "2026-04-15",
+    "notes": "Henry canceló subscripción el 4/15/26",
+    "monthlyPayments": {
+      "2026-04": {
+        "amount": 0,
+        "paid": false
+      }
+    }
+  },
+  {
+    "id": "web-jon-001",
+    "clientId": "client-jon",
+    "url": "ama-dance.vercel.app",
+    "type": "website",
+    "createdAt": "2026-04-21",
+    "initialCost": 1000,
+    "maintenanceType": "hourly",
+    "maintenanceRate": 30,
+    "maintenanceDay": 21,
+    "paymentMethod": "Zelle",
+    "status": "active",
+    "notes": "$200 hosting por 3 años incluido. Sin mantenimiento mensual fijo — solo labor por hora.",
+    "monthlyPayments": {
+      "2026-04": {
+        "amount": 600,
+        "paid": true
+      },
+      "2026-05": {
+        "amount": 300,
+        "paid": true
+      },
+      "2026-06": {
+        "amount": 300,
+        "paid": false
+      }
+    }
+  },
+  {
+    "id": "web-andres-001",
+    "clientId": "client-andres",
+    "url": "pro-luxury-landing-page.vercel.app",
+    "type": "landing_page",
+    "createdAt": "2026-06-08",
+    "initialCost": 200,
+    "maintenanceType": "monthly",
+    "maintenanceRate": 40,
+    "maintenanceDay": 8,
+    "paymentMethod": "Zelle",
+    "status": "active",
+    "notes": "Cobrar cada 8vo del mes",
+    "monthlyPayments": {
+      "2026-06": {
+        "amount": 40,
+        "paid": false
+      }
+    }
+  }
+]

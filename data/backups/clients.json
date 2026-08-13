@@ -1,0 +1,92 @@
+[
+  {
+    "id": "client-jennifer",
+    "businessName": "Midnight Shine Cleaners",
+    "contactName": "Jennifer Ortega",
+    "email": "",
+    "phone": "",
+    "notes": "",
+    "createdAt": "2026-02-04"
+  },
+  {
+    "id": "client-dulce",
+    "businessName": "Ember Business Services",
+    "contactName": "Dulce Maria Dorado",
+    "email": "dulce@emberbservices.com",
+    "phone": "",
+    "notes": "También tiene interés en Taqueria del Norte",
+    "createdAt": "2026-03-14"
+  },
+  {
+    "id": "client-andres",
+    "businessName": "Pro Luxury Facility Services",
+    "contactName": "Andres Hernandez",
+    "email": "Andreshernandezgo@hotmail.com",
+    "phone": "720-586-3692",
+    "notes": "",
+    "createdAt": "2026-06-08"
+  },
+  {
+    "id": "client-debbie",
+    "businessName": "KG Facility Solutions / Germ Eviction",
+    "contactName": "Debbie Garay",
+    "email": "alirioc@kgfsco.com",
+    "phone": "",
+    "notes": "KG University (SaaS interno). Germ Eviction en desarrollo.",
+    "createdAt": "2026-01-01"
+  },
+  {
+    "id": "client-jesse",
+    "businessName": "ERA 303 Services",
+    "contactName": "Jesse",
+    "email": "",
+    "phone": "",
+    "notes": "Carpet/floor cleaning Denver. Website pendiente.",
+    "createdAt": "2026-01-01"
+  },
+  {
+    "id": "client-henry",
+    "businessName": "Villasand Group",
+    "contactName": "Henry",
+    "email": "",
+    "phone": "",
+    "notes": "Canceló subscripción de landing page el 4/15.",
+    "createdAt": "2026-03-24"
+  },
+  {
+    "id": "client-jon",
+    "businessName": "AMA Dance Club",
+    "contactName": "Anna Musia",
+    "email": "",
+    "phone": "",
+    "notes": "The Warehaus Studio, Englewood CO. Sitio en amadance.com. $200 hosting por 3 años, sin mantenimiento mensual — solo labor.",
+    "createdAt": "2026-04-18"
+  },
+  {
+    "id": "client-cody",
+    "businessName": "Keystone Contracting",
+    "contactName": "Cody Thatcher",
+    "email": "",
+    "phone": "",
+    "notes": "West Wind Estates subdivision. No ha pagado.",
+    "createdAt": "2026-01-01"
+  },
+  {
+    "businessName": "Nanas Cleaning",
+    "contactName": "Isis Noriega",
+    "email": "nanascleaningserviceinfo@gmail.com",
+    "phone": "5054898050",
+    "notes": "Potential",
+    "id": "mqbuj4ich7ocr",
+    "createdAt": "2026-06-13T04:19:19.572Z"
+  },
+  {
+    "businessName": "MBJ CLEANING",
+    "contactName": "Norma, Hernández",
+    "email": "Jonherrera@mbjcleaning.com",
+    "phone": "7207632060",
+    "notes": "Ya cuentan con correo corporativo",
+    "id": "mrhsj5une0qdp",
+    "createdAt": "2026-07-12T12:49:41.471Z"
+  }
+]

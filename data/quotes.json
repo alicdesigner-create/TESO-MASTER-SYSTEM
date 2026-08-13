@@ -1,0 +1,376 @@
+[
+  {
+    "id": "quote-009",
+    "quoteNumber": "2026-009",
+    "clientId": "client-andres",
+    "date": "2026-05-15",
+    "validDays": 30,
+    "items": [
+      {
+        "id": "qi-001",
+        "qty": 1,
+        "description": "Professional Logo Design",
+        "unitPrice": 200
+      },
+      {
+        "id": "qi-002",
+        "qty": 500,
+        "description": "Business Cards (Design + Printing)",
+        "unitPrice": 0.36
+      },
+      {
+        "id": "qi-003",
+        "qty": 1,
+        "description": "Landing Page with QR Code",
+        "unitPrice": 200
+      },
+      {
+        "id": "qi-004",
+        "qty": 1,
+        "description": "Half-Letter Flyer Design (1 face only)",
+        "unitPrice": 70
+      },
+      {
+        "id": "qi-005",
+        "qty": 1000,
+        "description": "Flyer Printing 5.5\" × 8.5\" (80 lb Gloss Book)",
+        "unitPrice": 0.125
+      },
+      {
+        "id": "qi-006",
+        "qty": 1,
+        "description": "Corporate Website Design",
+        "unitPrice": 999
+      },
+      {
+        "id": "qi-007",
+        "qty": 1,
+        "description": "Corporate Email Setup (1–2 emails, domain required + monthly payment of $7 to $16)",
+        "unitPrice": 180
+      },
+      {
+        "id": "qi-008",
+        "qty": 1,
+        "description": "Google Business Profile Setup",
+        "unitPrice": 300
+      }
+    ],
+    "subtotal": 2254,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "total": 2254,
+    "notes": "The logo design includes two initial concepts and revisions tailored to your needs.\nThe landing page includes a QR code. Monthly maintenance starts at $40.00 after the launch date.\nWebsite maintenance is billed monthly at $130.00, which includes hosting, visual refinements, and ongoing improvements.\nImportant: After three design revisions for graphic pieces (excluding the website and landing page), additional work will be billed at $30/hour.",
+    "status": "accepted",
+    "createdAt": "2026-05-15"
+  },
+  {
+    "status": "accepted",
+    "date": "2026-06-13",
+    "validDays": 30,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "items": [
+      {
+        "id": "mqbukanr",
+        "qty": 1,
+        "description": "Professional Logo Design",
+        "unitPrice": 200,
+        "status": "in_progress"
+      },
+      {
+        "id": "mqbumbsb",
+        "qty": 500,
+        "description": "Business Cards (Design + Printing)",
+        "unitPrice": 0.36,
+        "status": "in_progress"
+      },
+      {
+        "id": "mqbuow1o",
+        "qty": 1,
+        "description": "Landing Page with QR Code",
+        "unitPrice": 200,
+        "status": "in_progress"
+      },
+      {
+        "id": "mqbupktr",
+        "qty": 1,
+        "description": "Half-Letter Flyer Design (1 face only)",
+        "unitPrice": 70
+      },
+      {
+        "id": "mqbuqvmr",
+        "qty": 1000,
+        "description": "Flyer Printing 5.5\" × 8.5\" (80 lb Gloss Book)",
+        "unitPrice": 0.13
+      },
+      {
+        "id": "mqbusmsf",
+        "qty": 1,
+        "description": "Corporate Website Design",
+        "unitPrice": 999
+      },
+      {
+        "id": "mqbutvpt",
+        "qty": 1,
+        "description": "Corporate Email Setup (1–2 emails, domain required + monthly paiment of $7 to $16)",
+        "unitPrice": 180
+      },
+      {
+        "id": "mqbuuw3n",
+        "qty": 1,
+        "description": "Google Business Profile Setup",
+        "unitPrice": 300
+      }
+    ],
+    "subtotal": 2259,
+    "total": 2259,
+    "clientId": "mqbuj4ich7ocr",
+    "quoteNumber": "2026-10",
+    "notes": "",
+    "id": "mqbuxsjniusbx",
+    "createdAt": "2026-06-13T04:30:43.907Z",
+    "updatedAt": "2026-06-27T04:46:01.842Z"
+  },
+  {
+    "status": "accepted",
+    "date": "2026-06-22",
+    "validDays": 30,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "items": [
+      {
+        "id": "mqorxqjk",
+        "qty": 2,
+        "description": "Publicidad Magnetica de  18\" x 36\" para vehiculo",
+        "unitPrice": 72
+      },
+      {
+        "id": "mqosz4ub",
+        "qty": 6,
+        "description": "6 Camisetas personalizadas color Charcoal (gris oscuro) - 4 talla M y 2 talla S (Logo pequeño al frente Logo grande en la espalda)",
+        "unitPrice": 28
+      },
+      {
+        "id": "mqq6a23k",
+        "qty": 1,
+        "description": "1 Camisetas personalizadas color Charcoal (gris oscuro) - talla 8",
+        "unitPrice": 25
+      }
+    ],
+    "subtotal": 337,
+    "total": 337,
+    "clientId": "client-henry",
+    "id": "mqosr70zz0l75",
+    "quoteNumber": "2026-011",
+    "createdAt": "2026-06-22T05:50:37.139Z",
+    "updatedAt": "2026-06-25T02:16:47.384Z",
+    "notes": "Notas:\n\nCamisetas Tultex 502 Premium Cotton.\n100% algodón peinado y preencogido.\nColor Charcoal (gris oscuro).\nPersonalización mediante impresión DTF de alta calidad.\nAplicación de logo al frente y espalda.\nIncluye materiales y mano de obra."
+  },
+  {
+    "status": "sent",
+    "date": "2026-06-28",
+    "validDays": 30,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "items": [
+      {
+        "id": "mqyrmc3s",
+        "qty": 2,
+        "description": "Custom Vehicle Door Magnet (White Magnetic Vinyl)",
+        "unitPrice": 57.5
+      },
+      {
+        "id": "mqys8mss",
+        "qty": 1,
+        "description": "Camiseta Premium (Tultex 502) (Front logo only)",
+        "unitPrice": 25
+      },
+      {
+        "id": "mqys8yxi",
+        "qty": 1,
+        "description": "Polo Premium (Front logo only)",
+        "unitPrice": 39
+      },
+      {
+        "id": "mqys99ya",
+        "qty": 1,
+        "description": "Camisa Manga Larga Premium (Front logo only)",
+        "unitPrice": 55
+      }
+    ],
+    "subtotal": 234,
+    "total": 234,
+    "clientId": "client-andres",
+    "notes": "Notas importantes:\nPara camisetas, polos y camisas, el precio incluye un logo frontal estándar** (lado izquierdo del pecho).\nAgregar un logo grande en la espalda: +$10 por prenda.\nDescuentos por volumen: 6 a 11 prendas: 5% de descuento. 12 a 23 prendas: 10% de descuento (ya aplicado cuando corresponda). 24 prendas o más: Solicita una cotización personalizada. Tiempo estimado de producción: 2 a 3 semanas después de aprobar el diseño y recibir el anticipo.\n",
+    "id": "mqysost6y3c03",
+    "quoteNumber": "2026-012",
+    "createdAt": "2026-06-29T05:46:27.161Z",
+    "updatedAt": "2026-06-29T05:48:32.624Z"
+  },
+  {
+    "clientId": "mrhsj5une0qdp",
+    "date": "2026-07-12",
+    "validDays": 30,
+    "status": "draft",
+    "taxRate": 0,
+    "taxAmount": 0,
+    "subtotal": 2049,
+    "total": 2049,
+    "notes": "Monthly Maintenance\n\nThe Digital Business Card (including an active, scannable QR code) will have a monthly maintenance fee of $30.\n\nOnce the website is launched, it will have a monthly maintenance fee of $70.\n\nTotal Monthly Maintenance:$100\n\nThis monthly fee includes hosting and maintenance for both the website and the digital business card, as well as minor aesthetic updates or content adjustments requested by the client.\n",
+    "items": [
+      {
+        "id": "mrhsjuskjf11",
+        "qty": 1,
+        "description": "Professional Logo Design",
+        "unitPrice": 220,
+        "status": "in_progress"
+      },
+      {
+        "id": "mrhsjuskkpaw",
+        "qty": 250,
+        "description": "Business Cards (Design + Printing)",
+        "unitPrice": 0.38,
+        "status": "in_progress"
+      },
+      {
+        "id": "mrhsjuskfzci",
+        "qty": 1,
+        "description": "Landing Page with QR Code",
+        "unitPrice": 210,
+        "status": "in_progress"
+      },
+      {
+        "id": "mrhsjuskycy1",
+        "qty": 1,
+        "description": "Half-Letter Flyer Design (1 face only)",
+        "unitPrice": 75,
+        "status": "rejected"
+      },
+      {
+        "id": "mrhsjusk247b",
+        "qty": 1000,
+        "description": "Flyer Printing 5.5\" × 8.5\" (80 lb Gloss Book)",
+        "unitPrice": 0.14,
+        "status": "rejected"
+      },
+      {
+        "id": "mrhsjusksgsq",
+        "qty": 1,
+        "description": "Corporate Website Design",
+        "unitPrice": 999,
+        "status": "rejected"
+      },
+      {
+        "id": "mrhsjusk57x2",
+        "qty": 1,
+        "description": "Google Business Profile Setup",
+        "unitPrice": 310,
+        "status": "rejected"
+      }
+    ],
+    "id": "mrhsjuswsnflu",
+    "quoteNumber": "2026-013",
+    "createdAt": "2026-07-12T12:50:13.808Z",
+    "updatedAt": "2026-08-05T04:42:06.649Z"
+  },
+  {
+    "status": "draft",
+    "date": "2026-08-03",
+    "validDays": 30,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "items": [
+      {
+        "id": "mscssjqb",
+        "qty": 1000,
+        "description": "1000 (Size: 5.5\" x 8.5\" Vertical Paper: 80 lb. Gloss Book Color: Full Color Both Sides)",
+        "unitPrice": 0.195
+      },
+      {
+        "id": "mscsu28l",
+        "qty": 1,
+        "description": "Self inking circle stamp 2cm x 2cm - VP",
+        "unitPrice": 29.5
+      }
+    ],
+    "subtotal": 224.5,
+    "total": 224.5,
+    "clientId": "client-jennifer",
+    "id": "mscssy5ydny64",
+    "quoteNumber": "2026-014",
+    "createdAt": "2026-08-03T05:38:09.526Z",
+    "updatedAt": "2026-08-05T04:44:37.774Z"
+  },
+  {
+    "status": "sent",
+    "date": "2026-08-07",
+    "validDays": 30,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "items": [
+      {
+        "id": "msiijq1m",
+        "qty": 1,
+        "description": "Custom Printed Apparel – 3 Pieces Includes front logo printing and finished garments ready for delivery",
+        "unitPrice": 75
+      },
+      {
+        "id": "msiikbvq",
+        "qty": 1,
+        "description": "Delivery Fee",
+        "unitPrice": 15
+      }
+    ],
+    "subtotal": 90,
+    "total": 90,
+    "notes": "ncludes: 3 garments with the approved design printed on the front.\nDelivery: $15 delivery fee to the provided address.\n50% deposit required to begin; remaining balance due upon delivery.",
+    "id": "msiilmot5ud22",
+    "quoteNumber": "2026-015",
+    "createdAt": "2026-08-07T05:39:08.957Z",
+    "updatedAt": "2026-08-08T23:12:41.642Z",
+    "clientId": "msiiobs5m4w0y",
+    "convertedToInvoiceId": "mskzocjzhc73n"
+  },
+  {
+    "status": "sent",
+    "date": "2026-08-08",
+    "validDays": 30,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "items": [
+      {
+        "id": "msjx4495",
+        "qty": 2,
+        "description": "Custom Performance Polo – Black (Left-Chest Logo) Size M",
+        "unitPrice": 30
+      },
+      {
+        "id": "msjx4niz",
+        "qty": 1,
+        "description": "Custom Performance Polo – Black (Left-Chest Logo) Size L",
+        "unitPrice": 30
+      },
+      {
+        "id": "msjx6h21",
+        "qty": 1,
+        "description": "Custom Performance Polo – Black (Left-Chest Logo) Size 2XL",
+        "unitPrice": 32
+      },
+      {
+        "id": "mskwr8fl",
+        "qty": 4,
+        "description": "Back logo printing for t-shirts ($7.00 each x 4)",
+        "unitPrice": 7
+      }
+    ],
+    "subtotal": 150,
+    "total": 150,
+    "clientId": "mqbuj4ich7ocr",
+    "notes": "Notes:\n• Price includes black performance polo shirts and one custom logo applied to the left chest.\n• Sizes included: 2 M, 3 L, 2 XL and 1 2XL.\n• Final garment color and logo appearance may vary slightly from digital previews.\n• Production time: approximately 2–3 weeks after approval and receipt of the deposit.\n• Additional garments or logo placements are available upon request and may require a separate quote.",
+    "id": "msjx9hp71u01d",
+    "quoteNumber": "2026-016",
+    "createdAt": "2026-08-08T05:17:23.035Z",
+    "updatedAt": "2026-08-08T23:09:10.930Z",
+    "convertedToInvoiceId": "mskzjtyxd601c"
+  }
+]

@@ -1,0 +1,428 @@
+[
+  {
+    "id": "invoice-002",
+    "invoiceNumber": "2026-2",
+    "clientId": "client-jennifer",
+    "date": "2026-04-13",
+    "dueDate": "2026-05-13",
+    "items": [
+      {
+        "id": "ii-001",
+        "description": "Monthly Maintenance - Web and Landing Page month of May 2026",
+        "amount": 170
+      }
+    ],
+    "subtotal": 170,
+    "total": 170,
+    "status": "paid",
+    "createdAt": "2026-04-13",
+    "updatedAt": "2026-06-17T04:06:06.758Z"
+  },
+  {
+    "status": "paid",
+    "date": "2026-06-17",
+    "dueDate": "2026-06-22",
+    "items": [
+      {
+        "id": "mqhjvb1l",
+        "description": "Flyer printing service of 1000 units (SIZE: 5.5\" x 8.5\" Vertical PAPER:100 lb. Matte Cover COLOR: Full Color Both Sides)",
+        "qty": 1000,
+        "unitPrice": 0,
+        "amount": 216
+      },
+      {
+        "id": "mqhjyu4f",
+        "description": "Monthly maintenance June 2026: Website + Landing page ",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 170
+      },
+      {
+        "id": "mqoqhe8g",
+        "description": "Google workspace - corporate e-mail",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 26
+      }
+    ],
+    "subtotal": 412,
+    "total": 412,
+    "clientId": "client-jennifer",
+    "id": "mqhk3gaup8eed",
+    "invoiceNumber": "2026-17",
+    "createdAt": "2026-06-17T04:13:49.254Z",
+    "updatedAt": "2026-07-07T06:27:39.069Z",
+    "paidAt": "2026-07-07T06:27:30.599Z",
+    "paidAmount": 412
+  },
+  {
+    "status": "paid",
+    "date": "2026-06-16",
+    "dueDate": "2026-06-22",
+    "items": [
+      {
+        "id": "mqhkifug",
+        "description": "Professional Logo Design",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 200
+      },
+      {
+        "id": "mqhkiqy6",
+        "description": "Business Cards (1 Design + 500 Printing)",
+        "qty": 500,
+        "unitPrice": 0,
+        "amount": 180
+      },
+      {
+        "id": "mqhkjf9g",
+        "description": "Landing Page with QR Code",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 200
+      },
+      {
+        "id": "mqhkjx5u",
+        "description": "Corporate Email Setup (andres@proluxuryfs.com)",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 180
+      }
+    ],
+    "subtotal": 760,
+    "total": 760,
+    "clientId": "client-andres",
+    "id": "mqhkpd0jl70d6",
+    "invoiceNumber": "2026-4",
+    "createdAt": "2026-06-17T04:30:51.427Z",
+    "updatedAt": "2026-07-07T06:28:40.859Z",
+    "paidAt": "2026-07-07T06:28:28.735Z",
+    "paidAmount": 760
+  },
+  {
+    "status": "paid",
+    "date": "2026-06-15",
+    "dueDate": "2026-06-15",
+    "items": [
+      {
+        "id": "mqhkrdme",
+        "description": "Website Hosting & Maintenance – June 2026.",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 40
+      }
+    ],
+    "subtotal": 40,
+    "total": 40,
+    "id": "mqhksd31tcdfi",
+    "invoiceNumber": "2026-15",
+    "createdAt": "2026-06-17T04:33:11.485Z",
+    "clientId": "client-dulce",
+    "updatedAt": "2026-06-25T02:33:11.194Z",
+    "paidAt": "2026-06-25T02:33:09.774Z",
+    "paidAmount": 40
+  },
+  {
+    "clientId": "client-jennifer",
+    "date": "2026-07-07",
+    "dueDate": "2026-08-06",
+    "status": "paid",
+    "subtotal": 179,
+    "total": 179,
+    "items": [
+      {
+        "id": "mra9lordkji6",
+        "description": "Monthly Maintenance - Web and Landing Page month of july 2026",
+        "amount": 170
+      },
+      {
+        "id": "mra9m0vy",
+        "description": "Google workspace - Corporate email",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 9
+      }
+    ],
+    "id": "mra9lorqbchlc",
+    "invoiceNumber": "2026-18",
+    "createdAt": "2026-07-07T06:25:23.366Z",
+    "updatedAt": "2026-08-05T05:28:25.488Z",
+    "paidAt": "2026-07-16T23:54:08.130Z",
+    "paidAmount": 179
+  },
+  {
+    "clientId": "client-dulce",
+    "date": "2026-07-15",
+    "dueDate": "2026-08-14",
+    "status": "paid",
+    "subtotal": 74.88,
+    "total": 74.88,
+    "items": [
+      {
+        "id": "mrlp954ggnr7",
+        "description": "Website Hosting & Maintenance – July 2026.",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 40
+      },
+      {
+        "id": "mrlp9tab",
+        "description": "4 months Google workspace (dulce@ember)",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 34.88
+      }
+    ],
+    "id": "mrlp954ujz28h",
+    "invoiceNumber": "2026-19",
+    "createdAt": "2026-07-15T06:28:59.838Z",
+    "updatedAt": "2026-08-01T05:13:09.518Z",
+    "paidAt": "2026-08-01T05:13:08.881Z",
+    "paidAmount": 74.88
+  },
+  {
+    "status": "paid",
+    "date": "2026-08-01",
+    "dueDate": "2026-08-03",
+    "items": [
+      {
+        "id": "ms9x52xv",
+        "description": "Flyers  - Size: 5.5\" x 8.5\" Vertical Paper: 100 lb. Matte Cover Color: Full Color Both Sides",
+        "qty": 1000,
+        "unitPrice": 0,
+        "amount": 216
+      },
+      {
+        "id": "ms9xamjd",
+        "description": "Balance due - Design",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 19
+      }
+    ],
+    "subtotal": 235,
+    "total": 235,
+    "clientId": "client-andres",
+    "id": "ms9xdr7yp8579",
+    "invoiceNumber": "2026-21",
+    "createdAt": "2026-08-01T05:23:00.238Z",
+    "paidAt": "2026-08-06T04:45:40.335Z",
+    "paidAmount": 235,
+    "updatedAt": "2026-08-06T04:45:40.627Z"
+  },
+  {
+    "status": "unpaid",
+    "date": "2026-08-05",
+    "dueDate": "2026-08-12",
+    "items": [
+      {
+        "id": "msfkzujo",
+        "description": "1000 (Size: 5.5\" x 8.5\" Vertical Paper: 80 lb. Gloss Book Color: Full Color Both Sides)",
+        "qty": 1000,
+        "unitPrice": 0,
+        "amount": 195
+      },
+      {
+        "id": "msfl1fz4",
+        "description": "Residential flyer + design back face + QR code activation",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 35
+      },
+      {
+        "id": "msfl2bis",
+        "description": "Self inking stamp - 2cm*2cm",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 29.5
+      },
+      {
+        "id": "msq8xl70",
+        "description": "Car magnet for  midnight shine cleaners 20\" * 30\" ",
+        "qty": 6,
+        "unitPrice": 0,
+        "amount": 271
+      }
+    ],
+    "subtotal": 530.5,
+    "total": 530.5,
+    "clientId": "client-jennifer",
+    "id": "msfl3syys9j22",
+    "invoiceNumber": "2026-22",
+    "createdAt": "2026-08-05T04:25:57.610Z",
+    "updatedAt": "2026-08-12T15:35:02.483Z"
+  },
+  {
+    "clientId": "client-jennifer",
+    "date": "2026-08-05",
+    "dueDate": "2026-08-05",
+    "status": "paid",
+    "subtotal": 188,
+    "total": 188,
+    "items": [
+      {
+        "id": "msfl9nsvrmox",
+        "description": "Monthly Maintenance - Web and Landing Page month of August 2026",
+        "amount": 170
+      },
+      {
+        "id": "msfl9nsv8vsf",
+        "description": "Google workspace - Corporate email (sales@midninghtshinecleaners.com)",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 9
+      },
+      {
+        "id": "msfl9nswa6td",
+        "description": "Google workspace - Corporate email (billing@midninghtshinecleaners.com)",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 9
+      }
+    ],
+    "id": "msfl9nt8vajwd",
+    "invoiceNumber": "2026-23",
+    "createdAt": "2026-08-05T04:30:30.860Z",
+    "updatedAt": "2026-08-05T13:42:01.031Z",
+    "paidAt": "2026-08-05T13:42:01.001Z",
+    "paidAmount": 188
+  },
+  {
+    "status": "paid",
+    "date": "2026-08-06",
+    "dueDate": "2026-08-05",
+    "items": [
+      {
+        "id": "msh1rbxs",
+        "description": "Corporate e-mail set up (info@nanasclean.com)",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 180
+      },
+      {
+        "id": "msh1w5u9",
+        "description": "Domain purchase - Go daddy (nanasclean.com)",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 40
+      }
+    ],
+    "subtotal": 220,
+    "total": 220,
+    "clientId": "mqbuj4ich7ocr",
+    "id": "msh1xqaus5h16",
+    "invoiceNumber": "2026-24",
+    "createdAt": "2026-08-06T05:04:53.862Z",
+    "paidAt": "2026-08-09",
+    "paidAmount": 220,
+    "updatedAt": "2026-08-10T04:48:40.913Z"
+  },
+  {
+    "status": "unpaid",
+    "date": "2026-08-06",
+    "dueDate": "2026-08-14",
+    "items": [
+      {
+        "id": "msh2hizq",
+        "description": "MBJ Cleaning - Logo design and branding",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 220
+      },
+      {
+        "id": "msh2hjhc",
+        "description": "Business cards + printing of 250 units",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 95
+      },
+      {
+        "id": "msh2hl2u",
+        "description": "Business cards rounded corners finish",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 10
+      }
+    ],
+    "subtotal": 325,
+    "total": 325,
+    "clientId": "mrhsj5une0qdp",
+    "id": "msh2kq7cin1ms",
+    "invoiceNumber": "2026-25",
+    "createdAt": "2026-08-06T05:22:46.824Z",
+    "updatedAt": "2026-08-06T05:23:02.218Z"
+  },
+  {
+    "clientId": "mqbuj4ich7ocr",
+    "quoteId": "msjx9hp71u01d",
+    "date": "2026-08-08",
+    "dueDate": "2026-08-15",
+    "items": [
+      {
+        "id": "mskzjtunbqnj",
+        "description": "Custom Performance Polo – Black (Left-Chest Logo) Size M",
+        "qty": 2,
+        "unitPrice": 30,
+        "amount": 60
+      },
+      {
+        "id": "mskzjtune85w",
+        "description": "Custom Performance Polo – Black (Left-Chest Logo) Size L",
+        "qty": 1,
+        "unitPrice": 30,
+        "amount": 30
+      },
+      {
+        "id": "mskzjtun9yeg",
+        "description": "Custom Performance Polo – Black (Left-Chest Logo) Size 2XL",
+        "qty": 1,
+        "unitPrice": 32,
+        "amount": 32
+      },
+      {
+        "id": "mskzjtunv1l0",
+        "description": "Back logo printing for t-shirts ($7.00 each x 4)",
+        "qty": 4,
+        "unitPrice": 7,
+        "amount": 28
+      }
+    ],
+    "subtotal": 150,
+    "total": 150,
+    "status": "unpaid",
+    "id": "mskzjtyxd601c",
+    "invoiceNumber": "2026-26",
+    "createdAt": "2026-08-08T23:09:10.905Z",
+    "updatedAt": "2026-08-08T23:09:40.751Z"
+  },
+  {
+    "clientId": "msiiobs5m4w0y",
+    "quoteId": "msiilmot5ud22",
+    "date": "2026-08-08",
+    "dueDate": "2026-09-07",
+    "items": [
+      {
+        "id": "mskzocjm0940",
+        "description": "Custom Printed Apparel – 3 Pieces Includes front logo printing and finished garments ready for delivery",
+        "qty": 1,
+        "unitPrice": 75,
+        "amount": 75
+      },
+      {
+        "id": "mskzocjm9iwt",
+        "description": "Delivery Fee",
+        "qty": 1,
+        "unitPrice": 15,
+        "amount": 15
+      }
+    ],
+    "subtotal": 90,
+    "total": 90,
+    "status": "partial",
+    "id": "mskzocjzhc73n",
+    "invoiceNumber": "2026-27",
+    "createdAt": "2026-08-08T23:12:41.615Z",
+    "depositAmount": 45,
+    "updatedAt": "2026-08-08T23:27:42.239Z"
+  }
+]

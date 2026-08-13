@@ -1,0 +1,601 @@
+[
+  {
+    "id": "txn-001",
+    "type": "expense",
+    "category": "Claude AI / (subscriptions)",
+    "amount": 23,
+    "date": "2026-02-28",
+    "description": "Claude Code - Feb 2026"
+  },
+  {
+    "id": "txn-002",
+    "type": "expense",
+    "category": "Claude AI / (subscriptions)",
+    "amount": 20.83,
+    "date": "2026-03-28",
+    "description": "Claude Code - Mar 2026"
+  },
+  {
+    "id": "txn-003",
+    "type": "income",
+    "category": "Web Design – New Clients",
+    "amount": 180,
+    "date": "2026-03-01",
+    "description": "Ember Business Services - Web",
+    "clientId": "client-dulce"
+  },
+  {
+    "id": "txn-004",
+    "type": "income",
+    "category": "Landing Pages",
+    "amount": 200,
+    "date": "2026-03-14",
+    "description": "Ember Landing Page",
+    "clientId": "client-dulce"
+  },
+  {
+    "id": "txn-005",
+    "type": "income",
+    "category": "Other Income",
+    "amount": 100,
+    "date": "2026-03-01",
+    "description": "Other income March"
+  },
+  {
+    "id": "txn-006",
+    "type": "expense",
+    "category": "Claude AI / (subscriptions)",
+    "amount": 20.83,
+    "date": "2026-04-28",
+    "description": "Claude Code - Apr 2026"
+  },
+  {
+    "id": "txn-007",
+    "type": "expense",
+    "category": "Google Workspace",
+    "amount": 7,
+    "date": "2026-04-13",
+    "description": "Google Workspace - studio@tesographics.com Apr"
+  },
+  {
+    "id": "txn-008",
+    "type": "expense",
+    "category": "Printing Business Cards / Flyers",
+    "amount": 144.97,
+    "date": "2026-04-01",
+    "description": "Printing - April"
+  },
+  {
+    "id": "txn-009",
+    "type": "income",
+    "category": "Web Design – New Clients",
+    "amount": 981,
+    "date": "2026-04-01",
+    "description": "Proyectos Abril - varios clientes"
+  },
+  {
+    "id": "txn-010",
+    "type": "expense",
+    "category": "Claude AI / (subscriptions)",
+    "amount": 20.83,
+    "date": "2026-05-28",
+    "description": "Claude Code - May 2026"
+  },
+  {
+    "id": "txn-011",
+    "type": "expense",
+    "category": "ChatGPT (subscriptions)",
+    "amount": 8,
+    "date": "2026-05-01",
+    "description": "ChatGPT May 2026"
+  },
+  {
+    "id": "txn-012",
+    "type": "expense",
+    "category": "Google Workspace",
+    "amount": 7,
+    "date": "2026-05-13",
+    "description": "Google Workspace May"
+  },
+  {
+    "id": "txn-013",
+    "type": "expense",
+    "category": "Printing Business Cards / Flyers",
+    "amount": 25.27,
+    "date": "2026-05-01",
+    "description": "Printing - May"
+  },
+  {
+    "id": "txn-014",
+    "type": "income",
+    "category": "Web Design – New Clients",
+    "amount": 300,
+    "date": "2026-05-01",
+    "description": "Pro Luxury - Logo + Landing 50% deposit",
+    "clientId": "client-andres"
+  },
+  {
+    "id": "txn-015",
+    "type": "income",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 280,
+    "date": "2026-05-04",
+    "description": "Midnight Shine + Ember - maintenance May",
+    "clientId": "client-jennifer"
+  },
+  {
+    "id": "txn-016",
+    "type": "income",
+    "category": "Logo & Branding",
+    "amount": 1140,
+    "date": "2026-05-01",
+    "description": "Branding income May - Villasand + otros"
+  },
+  {
+    "id": "txn-017",
+    "type": "income",
+    "category": "Print Design",
+    "amount": 252,
+    "date": "2026-05-01",
+    "description": "Print Design May"
+  },
+  {
+    "id": "txn-018",
+    "type": "expense",
+    "category": "Claude AI / (subscriptions)",
+    "amount": 20.83,
+    "date": "2026-06-28",
+    "description": "Claude Code - Jun 2026"
+  },
+  {
+    "id": "txn-019",
+    "type": "expense",
+    "category": "ChatGPT (subscriptions)",
+    "amount": 8,
+    "date": "2026-06-01",
+    "description": "ChatGPT Jun 2026"
+  },
+  {
+    "id": "txn-020",
+    "type": "expense",
+    "category": "Domain Names",
+    "amount": 13.19,
+    "date": "2026-06-08",
+    "description": "Domain proluxuryfs.com - Andres Hernandez",
+    "clientId": "client-andres"
+  },
+  {
+    "id": "txn-021",
+    "type": "expense",
+    "category": "Printing Business Cards / Flyers",
+    "amount": 166.36,
+    "date": "2026-06-01",
+    "description": "Printing - June"
+  },
+  {
+    "type": "expense",
+    "date": "2026-06-13",
+    "category": "Professional Development / Courses",
+    "amount": 400,
+    "paymentMethod": "Visa 8985 (Teso)",
+    "description": "Clude Code advanced course",
+    "notes": "Apex Digital , pending invoice",
+    "id": "mqc0ivcy2os5x"
+  },
+  {
+    "type": "expense",
+    "date": "2026-06-17",
+    "category": "Miscellaneous / Other",
+    "amount": 19.6,
+    "clientId": "client-jennifer",
+    "paymentMethod": "Visa 9854 (personal)",
+    "description": "2 T shirts to stamp logo",
+    "id": "mqhjk1fqmutzk"
+  },
+  {
+    "type": "expense",
+    "date": "2026-06-23",
+    "category": "Miscellaneous / Other",
+    "amount": 13.96,
+    "clientId": "client-henry",
+    "paymentMethod": "Visa 9854 (personal)",
+    "description": "T shirt - to stamp",
+    "notes": "Free sample for customer",
+    "id": "mqq6huovngauj"
+  },
+  {
+    "type": "expense",
+    "date": "2026-06-24",
+    "category": "Printing Business Cards / Flyers",
+    "amount": 93.65,
+    "clientId": "client-henry",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "description": "2 magnets for vehicle ",
+    "id": "mqsrq9cfoezib"
+  },
+  {
+    "type": "income",
+    "date": "2026-06-23",
+    "category": "Print Design",
+    "amount": 327,
+    "clientId": "client-henry",
+    "description": "Villasand Pays for  8 t shirts and 2 magnets",
+    "id": "mqsrtitea7jsu"
+  },
+  {
+    "type": "expense",
+    "date": "2026-06-24",
+    "category": "Printing Business Cards / Flyers",
+    "amount": 67.78,
+    "clientId": "client-henry",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "description": "transfer and 7 t shirts",
+    "id": "mqsvhu1msalfc"
+  },
+  {
+    "type": "income",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 40,
+    "date": "2026-06-25",
+    "description": "Invoice #2026-15 - Ember Business Services",
+    "clientId": "client-dulce",
+    "invoiceId": "mqhksd31tcdfi",
+    "id": "mqsw0tocousw5"
+  },
+  {
+    "type": "income",
+    "date": "2026-06-25",
+    "category": "Print Design",
+    "amount": 216,
+    "clientId": "client-jennifer",
+    "description": "Flyer printing service of 1,000 units, size 5.5 inches by 8.5 inches",
+    "id": "mqvrwcjxnfyzp"
+  },
+  {
+    "type": "income",
+    "date": "2026-06-25",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 170,
+    "clientId": "client-jennifer",
+    "description": "Monthly maintenance, June 2026, website plus landing page",
+    "id": "mqvrx1nkoubgk"
+  },
+  {
+    "type": "income",
+    "date": "2026-06-25",
+    "category": "Google workspace - Corporate emails",
+    "amount": 26,
+    "clientId": "client-jennifer",
+    "description": "Creation of one corporate email for Midnight Shine Cleaners.",
+    "id": "mqvryjjqiqkky"
+  },
+  {
+    "type": "income",
+    "date": "2026-06-25",
+    "category": "Logo & Branding",
+    "amount": 370,
+    "description": "50% remaining for branding /  logo & business cards",
+    "id": "mqvsl96cjzh3z",
+    "clientId": "client-andres"
+  },
+  {
+    "type": "income",
+    "date": "2026-06-25",
+    "category": "Consulting / Strategy",
+    "amount": 80,
+    "description": "set up proposal - business approach",
+    "clientId": "client-andres",
+    "id": "mqvsqxxzpdahz"
+  },
+  {
+    "type": "income",
+    "date": "2026-06-26",
+    "category": "Logo & Branding",
+    "amount": 290,
+    "clientId": "mqbuj4ich7ocr",
+    "description": "Logo and branding development 50% deposit",
+    "id": "mqvsu9agnfadq"
+  },
+  {
+    "type": "expense",
+    "date": "2026-07-06",
+    "category": "Domain Names",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Go daddy",
+    "amount": 31.38,
+    "clientId": "mqbuj4ich7ocr",
+    "description": "domain for nanas cleaning \"nanasclean.com\"",
+    "notes": "bought for 2 years renews on 7/6/2028",
+    "id": "mr9twdx5v0mbg"
+  },
+  {
+    "type": "income",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 760,
+    "date": "2026-07-07",
+    "description": "Invoice #2026-4 - Pro Luxury Facility Services",
+    "clientId": "client-andres",
+    "invoiceId": "mqhkpd0jl70d6",
+    "id": "mra9o6fnif36z"
+  },
+  {
+    "type": "income",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 412,
+    "date": "2026-07-07",
+    "description": "Invoice #2026-17 - Midnight Shine Cleaners",
+    "clientId": "client-jennifer",
+    "invoiceId": "mqhk3gaup8eed",
+    "id": "mra9oeyby8rg7"
+  },
+  {
+    "type": "income",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 760,
+    "date": "2026-07-07",
+    "description": "Invoice #2026-4 - Pro Luxury Facility Services",
+    "clientId": "client-andres",
+    "invoiceId": "mqhkpd0jl70d6",
+    "id": "mra9pnt89wjal"
+  },
+  {
+    "type": "expense",
+    "date": "2026-06-30",
+    "category": "Google Workspace",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Google",
+    "amount": 8.05,
+    "description": "June workspace for Teso graphics (studio@tesographics.com)",
+    "id": "mrd2j8xljqzpf"
+  },
+  {
+    "type": "income",
+    "date": "2026-07-03",
+    "category": "Print Design",
+    "amount": 10,
+    "clientId": "client-henry",
+    "description": "10 dollas of remaining balance of t shirts design",
+    "id": "mrd2p9panp30d"
+  },
+  {
+    "type": "income",
+    "date": "2026-07-11",
+    "category": "Web Design – New Clients",
+    "clientId": "mqbuj4ich7ocr",
+    "description": "50% to star nanas clean website",
+    "amount": 500,
+    "id": "mrfs2z25vr6m6"
+  },
+  {
+    "type": "expense",
+    "date": "2026-07-13",
+    "category": "Printing Business Cards / Flyers",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Goprint.com",
+    "amount": 74.95,
+    "clientId": "mqbuj4ich7ocr",
+    "description": "250 Cards for Isis + 250 Cards for Valeria",
+    "id": "mrjet8qqndwvt"
+  },
+  {
+    "type": "expense",
+    "date": "2026-07-15",
+    "category": "Garment Transfer - Print",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Ninja transfers",
+    "amount": 16.27,
+    "clientId": "mqbuj4ich7ocr",
+    "description": "printing of logos for T shirts",
+    "id": "mrlnah2ui95bs"
+  },
+  {
+    "type": "income",
+    "date": "2026-07-16",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 179,
+    "clientId": "client-jennifer",
+    "description": "Monthly maintenance  - July 2026",
+    "id": "mro635vcaadko"
+  },
+  {
+    "type": "expense",
+    "date": "2026-07-18",
+    "category": "Garment Transfer - Print",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "TJ MAXX",
+    "amount": 89.46,
+    "description": "GARMENT TO PRINT MY OWN LOGO",
+    "id": "mrpthzjj3fqrn"
+  },
+  {
+    "type": "expense",
+    "date": "2026-07-18",
+    "description": "GARMENT TO PRINT MY OWN LOGO",
+    "category": "Garment Transfer - Print",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "WALMART",
+    "amount": 85.14,
+    "id": "mrptiuignoade"
+  },
+  {
+    "type": "expense",
+    "date": "2026-07-23",
+    "category": "Printing Business Cards / Flyers",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Go print",
+    "amount": 158.64,
+    "clientId": "client-andres",
+    "description": "1000 FLYERS  proluxury",
+    "id": "mrx2bwcvqyg24"
+  },
+  {
+    "type": "income",
+    "date": "2026-07-23",
+    "amount": 73.57,
+    "category": "Web Design – Recurring / Maintenance",
+    "clientId": "client-dulce",
+    "description": "Monthly paiment. $40.00 + 33.57 google 4 months",
+    "id": "mrx2h1rkuszie"
+  },
+  {
+    "type": "income",
+    "date": "2026-07-22",
+    "category": "Print Design",
+    "amount": 176,
+    "clientId": "client-andres",
+    "description": "Flyer design + printing test (emergency)",
+    "id": "mrx2l4m981lz7"
+  },
+  {
+    "type": "income",
+    "date": "2026-07-31",
+    "amount": 300,
+    "clientId": "mqbuj4ich7ocr",
+    "category": "P.O.P Items printig",
+    "description": "Business cards 50% printing cost + landing page creation 50%",
+    "id": "ms9sjuykck0z7"
+  },
+  {
+    "type": "expense",
+    "date": "2026-07-29",
+    "category": "Garment Transfer - Print",
+    "paymentMethod": "Visa 9854 (personal)",
+    "vendor": "Ross dress for less",
+    "amount": 10.89,
+    "clientId": "client-jennifer",
+    "description": "Ross - 1 t shit for logo stamp Germ eviction",
+    "id": "ms9t9rf942xuw"
+  },
+  {
+    "type": "expense",
+    "date": "2026-07-30",
+    "category": "Meals & Entertainment (business)",
+    "paymentMethod": "Visa 9854 (personal)",
+    "vendor": "MUDROCK´S",
+    "amount": 19.1,
+    "clientId": "client-jennifer",
+    "description": "DRINKS -DISCUSS WEBSITE CHANGES AND NEW FLYER DESIGN FOR RESIDENTIAL CLEANING",
+    "id": "ms9tcd1wvn79e"
+  },
+  {
+    "type": "expense",
+    "date": "2026-07-31",
+    "amount": 211.84,
+    "category": "P.O.P Items printig",
+    "clientId": "client-jennifer",
+    "description": "6 Car Magnets printing for midnight shine cleaner",
+    "id": "ms9wwkr5yoxat",
+    "vendor": "Go print"
+  },
+  {
+    "type": "expense",
+    "date": "2026-08-01",
+    "category": "Garment Transfer - Print",
+    "paymentMethod": "Visa 9854 (personal)",
+    "vendor": "Ross - Dress for less",
+    "amount": 73.49,
+    "clientId": "client-jon",
+    "description": "T shirts and tank tops",
+    "id": "mscqykxgimu2b"
+  },
+  {
+    "type": "expense",
+    "date": "2026-08-04",
+    "category": "P.O.P Items printig",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "GO print",
+    "amount": 145.59,
+    "clientId": "client-jennifer",
+    "description": "1000 residential cleaning flyers 2 faces full color half letter",
+    "id": "msflkrv17n1vm"
+  },
+  {
+    "type": "expense",
+    "date": "2026-08-04",
+    "category": "Google Workspace",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Google",
+    "amount": 8.75,
+    "description": "workspace - studio@tesographics.com monthly",
+    "id": "msfn1memcu0xf"
+  },
+  {
+    "type": "expense",
+    "date": "2026-08-04",
+    "category": "Miscellaneous / Other",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Vista print",
+    "amount": 21.92,
+    "clientId": "client-jennifer",
+    "description": "1 self inking stamp 2cm *2cm",
+    "id": "msfnv9ik7ewab"
+  },
+  {
+    "type": "income",
+    "date": "2026-08-05",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 188,
+    "clientId": "client-jennifer",
+    "description": "Monthly maintenance + 2 emails mnsc - August 2026",
+    "id": "msg4ym4t2hg3o"
+  },
+  {
+    "type": "income",
+    "date": "2026-08-05",
+    "category": "P.O.P Items printig",
+    "amount": 235,
+    "clientId": "client-andres",
+    "description": "Printing of 1000 flyers half letter full color ",
+    "id": "msh18pspnnkur"
+  },
+  {
+    "type": "expense",
+    "date": "2026-08-05",
+    "category": "Garment Transfer - Print",
+    "paymentMethod": "Visa 9854 (personal)",
+    "vendor": "Burlington",
+    "amount": 24.99,
+    "description": "jean and t shirt for work - Teso",
+    "id": "msh1ir0vfcjww"
+  },
+  {
+    "type": "expense",
+    "date": "2026-08-06",
+    "category": "P.O.P Items printig",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Go print",
+    "amount": 45.82,
+    "description": "250 Bussiness cards for MBJ - Regular paper  full color ",
+    "clientId": "mrhsj5une0qdp",
+    "id": "msigvv9xuh5qr"
+  },
+  {
+    "type": "income",
+    "date": "2026-08-07",
+    "category": "Garment Transfer - Print",
+    "amount": 45,
+    "clientId": "msiiobs5m4w0y",
+    "description": "50% of $90 - 3 garment purchase and design transfer",
+    "id": "mskudxgedjxbj"
+  },
+  {
+    "type": "expense",
+    "date": "2026-08-08",
+    "category": "Garment Transfer - Print",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "NINJA TRANSFERS",
+    "amount": 84.4,
+    "clientId": "mqbuj4ich7ocr",
+    "description": "T shirts and transfer for Nanas clean",
+    "id": "mskwnew704hiu"
+  },
+  {
+    "type": "income",
+    "date": "2026-08-09",
+    "category": "Other Income",
+    "amount": 180,
+    "description": "corpoarate email set up for nanas clean (1 email : info@nanasclean.com)",
+    "clientId": "mqbuj4ich7ocr",
+    "id": "msmqqwww0xwdr"
+  }
+]
