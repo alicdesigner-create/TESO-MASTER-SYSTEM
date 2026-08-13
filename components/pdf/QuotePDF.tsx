@@ -1,7 +1,7 @@
 import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 import { Quote, Client } from "@/lib/types";
 import { formatLocalDate } from "@/lib/date";
-import { MAINTENANCE_PLANS, MAINTENANCE_NOTES, HOSTING_ONLY, MAINTENANCE_DISCLAIMER } from "@/lib/maintenancePlans";
+import { HOSTING_ONLY, WEBSITE_DIGITAL_SUPPORT } from "@/lib/maintenancePlans";
 
 const C = {
   carbon: "#202120",
@@ -57,19 +57,8 @@ const s = StyleSheet.create({
   // Sections
   sectionTitle: { fontSize: 8, fontFamily: "Helvetica-Bold", color: C.carbon, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6, paddingBottom: 4, borderBottom: 1, borderColor: C.border },
   termText: { fontSize: 7.5, color: C.textMuted, lineHeight: 1.7, marginBottom: 3 },
-  notesText: { fontSize: 8, color: "#555555", fontFamily: "Helvetica-Oblique", lineHeight: 1.8 },
-  // Maintenance plans
-  plansIntro: { fontSize: 7.5, color: C.textMuted, lineHeight: 1.6, marginBottom: 10 },
-  plansRow: { flexDirection: "row", gap: 10, marginBottom: 4 },
-  planCard: { flex: 1, borderWidth: 1, borderColor: C.border, borderRadius: 4, paddingHorizontal: 10, paddingVertical: 10 },
-  planCardFeatured: { flex: 1, borderWidth: 1.5, borderColor: C.carbon, borderRadius: 4, paddingHorizontal: 10, paddingVertical: 10, backgroundColor: "#faf8f5" },
-  planBadge: { alignSelf: "flex-start", backgroundColor: C.carbon, color: C.beige, fontSize: 6, fontFamily: "Helvetica-Bold", letterSpacing: 0.5, textTransform: "uppercase", paddingHorizontal: 6, paddingVertical: 3, borderRadius: 2, marginBottom: 6 },
-  planName: { fontSize: 8.5, fontFamily: "Helvetica-Bold", color: C.carbon, textTransform: "uppercase", letterSpacing: 0.3, marginBottom: 3 },
-  planPriceRow: { flexDirection: "row", alignItems: "baseline", marginBottom: 8 },
-  planPrice: { fontSize: 15, fontFamily: "Helvetica-Bold", color: C.carbon },
-  planPriceUnit: { fontSize: 7.5, color: C.textMuted, marginLeft: 3 },
-  planFeature: { fontSize: 7.3, color: C.textDark, lineHeight: 1.6, marginBottom: 2 },
-  planNote: { fontSize: 6.8, color: C.textMuted, fontFamily: "Helvetica-Oblique", lineHeight: 1.5, marginTop: 7, paddingTop: 6, borderTop: 1, borderColor: C.border },
+  termBullet: { fontSize: 8, color: C.textMuted, lineHeight: 1.9, marginBottom: 7 },
+  // Hosting-only option
   hostingBox: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", borderWidth: 1, borderColor: C.border, borderStyle: "dashed", borderRadius: 4, paddingHorizontal: 12, paddingVertical: 10, marginTop: 10, marginBottom: 10, backgroundColor: "#fbfbfa" },
   hostingLeft: { flexDirection: "column", flexShrink: 1, paddingRight: 10 },
   hostingLabel: { fontSize: 7, fontFamily: "Helvetica-Bold", color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.8, marginBottom: 3 },
@@ -77,10 +66,8 @@ const s = StyleSheet.create({
   hostingPriceBox: { alignItems: "flex-end" },
   hostingPrice: { fontSize: 13, fontFamily: "Helvetica-Bold", color: C.carbon },
   hostingPriceUnit: { fontSize: 7, color: C.textMuted },
-  disclaimerBox: { backgroundColor: "#faf6f0", borderLeft: 2, borderColor: C.beige, paddingHorizontal: 9, paddingVertical: 7, marginBottom: 10 },
-  disclaimerText: { fontSize: 7, color: "#6a6a6a", lineHeight: 1.6 },
   // Signatures
-  sigSection: { flexDirection: "row", marginTop: 22, gap: 24 },
+  sigSection: { flexDirection: "row", marginTop: 42, gap: 24 },
   sigBlock: { flex: 1 },
   sigLabel: { fontSize: 7, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 22 },
   sigLine: { borderBottom: 1, borderColor: "#cccccc", marginBottom: 4 },
@@ -103,14 +90,15 @@ interface Props {
   client: Client | null;
 }
 
-const TERMS = [
-  "50% deposit required before project begins; remaining balance due upon completion.",
-  "After three (3) design revisions per graphic piece (excluding websites and landing pages), additional work is billed at $30/hour.",
-  "Final files are delivered only after full payment is received.",
-  "This quote is valid for the number of days specified from the quote date.",
-  "Printing orders are non-refundable once approved and sent to print.",
-  "Website and landing page maintenance is billed monthly starting from the launch date.",
-];
+function buildTerms(validDays: number): string[] {
+  return [
+    "50% deposit required to begin; balance due upon completion.",
+    "Up to 3 revisions included per graphic piece; additional revisions — $30/hour.",
+    "Final files delivered after full payment.",
+    `Quote valid for ${validDays} days.`,
+    "Printing orders are non-refundable once approved.",
+  ];
+}
 
 export default function QuotePDF({ quote, client }: Props) {
   return (
@@ -193,30 +181,13 @@ export default function QuotePDF({ quote, client }: Props) {
           </View>
         </View>
 
-        {/* MAINTENANCE & SUPPORT PLANS (optional, per-quote toggle) */}
+        {/* WEBSITE & DIGITAL SUPPORT + HOSTING-ONLY (optional, per-quote toggle) */}
         {quote.includeMaintenancePlans && (
         <View wrap={false}>
-          <Text style={s.sectionTitle}>Maintenance & Support Plans</Text>
-          <Text style={s.plansIntro}>
-            Optional recurring plans to keep your website and QR landing page updated, supported, and running smoothly after launch.
-          </Text>
-
-          <View style={s.plansRow}>
-            {MAINTENANCE_PLANS.map((plan) => (
-              <View key={plan.name} style={plan.featured ? s.planCardFeatured : s.planCard}>
-                {plan.badge ? <Text style={s.planBadge}>{plan.badge}</Text> : null}
-                <Text style={s.planName}>{plan.name}</Text>
-                <View style={s.planPriceRow}>
-                  <Text style={s.planPrice}>{plan.price}</Text>
-                  <Text style={s.planPriceUnit}>{plan.unit}</Text>
-                </View>
-                {plan.features.map((f, i) => (
-                  <Text key={i} style={s.planFeature}>• {f}</Text>
-                ))}
-                {plan.note ? <Text style={s.planNote}>{plan.note}</Text> : null}
-              </View>
-            ))}
-          </View>
+          <Text style={s.sectionTitle}>Website & Digital Support</Text>
+          {WEBSITE_DIGITAL_SUPPORT.map((line, i) => (
+            <Text key={i} style={s.termText}>• {line}</Text>
+          ))}
 
           <View style={s.hostingBox}>
             <View style={s.hostingLeft}>
@@ -228,47 +199,33 @@ export default function QuotePDF({ quote, client }: Props) {
               <Text style={s.hostingPriceUnit}>{HOSTING_ONLY.unit}</Text>
             </View>
           </View>
-
-          <View style={s.disclaimerBox}>
-            <Text style={s.disclaimerText}>{MAINTENANCE_DISCLAIMER}</Text>
-          </View>
-
-          {MAINTENANCE_NOTES.map((n, i) => (
-            <Text key={i} style={s.termText}>• {n}</Text>
-          ))}
         </View>
         )}
 
-        {/* TERMS */}
-        <Text style={quote.includeMaintenancePlans ? [s.sectionTitle, { marginTop: 14 }] : s.sectionTitle}>Terms and Conditions</Text>
-        {TERMS.map((t, i) => (
-          <Text key={i} style={s.termText}>• {t}</Text>
-        ))}
+        {/* TERMS & ACCEPTANCE — dedicated page, always starts clean at the top */}
+        <View break>
+          <Text style={s.sectionTitle}>Terms and Conditions</Text>
+          {buildTerms(quote.validDays).map((t, i) => (
+            <Text key={i} style={s.termBullet}>• {t}</Text>
+          ))}
 
-        {/* NOTES */}
-        {quote.notes && (
-          <View>
-            <Text style={[s.sectionTitle, { marginTop: 12 }]}>Notes and Additional Comments</Text>
-            <Text style={s.notesText}>{quote.notes}</Text>
-          </View>
-        )}
-
-        {/* SIGNATURES */}
-        <View style={s.sigSection}>
-          <View style={s.sigBlock}>
-            <Text style={s.sigLabel}>Prepared by</Text>
-            <View style={s.sigLine} />
-            <Text style={s.sigName}>Alirio Castaneda — Teso Graphics LLC</Text>
-          </View>
-          <View style={s.sigBlock}>
-            <Text style={s.sigLabel}>Accepted by</Text>
-            <View style={s.sigLine} />
-            <Text style={s.sigName}>{client?.contactName ?? "Client Signature"}</Text>
-          </View>
-          <View style={s.sigBlock}>
-            <Text style={s.sigLabel}>Date</Text>
-            <View style={s.sigLine} />
-            <Text style={s.sigName}> </Text>
+          {/* SIGNATURES */}
+          <View style={s.sigSection}>
+            <View style={s.sigBlock}>
+              <Text style={s.sigLabel}>Prepared by</Text>
+              <View style={s.sigLine} />
+              <Text style={s.sigName}>Alirio Castaneda — Teso Graphics LLC</Text>
+            </View>
+            <View style={s.sigBlock}>
+              <Text style={s.sigLabel}>Accepted by</Text>
+              <View style={s.sigLine} />
+              <Text style={s.sigName}>{client?.contactName ?? "Client Signature"}</Text>
+            </View>
+            <View style={s.sigBlock}>
+              <Text style={s.sigLabel}>Date</Text>
+              <View style={s.sigLine} />
+              <Text style={s.sigName}> </Text>
+            </View>
           </View>
         </View>
 

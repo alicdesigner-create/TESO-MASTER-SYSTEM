@@ -56,7 +56,7 @@ export const HOSTING_ONLY = {
   price: "$160",
   unit: "/ 2 years",
   description:
-    "Includes website hosting only. Website updates, design changes, landing page changes, or technical assistance are billed at $35/hour.",
+    "Includes website hosting. Updates, design changes, landing page changes, or technical support: $35/hour.",
 };
 
 export const MAINTENANCE_DISCLAIMER =
@@ -68,4 +68,14 @@ export const MAINTENANCE_NOTES: string[] = [
   "Minor updates and adjustments are included within the selected maintenance plan.",
   "Larger redesigns, new pages, major functionality changes, or work outside the agreed maintenance scope may be billed separately at $35/hour.",
   "The client may choose Website Care, QR Landing Page Care, Complete Digital Care, or the Hosting-Only option.",
+];
+
+// Compact bullet content for the PDF's "Website & Digital Support" section —
+// a condensed summary of MAINTENANCE_PLANS for print, kept short on purpose.
+export const WEBSITE_DIGITAL_SUPPORT: string[] = [
+  "Website Care — $140/month",
+  "QR Landing Page Care — $40/month",
+  "Complete Digital Care — $170/month — Website + Landing Page",
+  "Google Workspace fees are billed separately by Google.",
+  "Major work outside the selected plan is billed at $35/hour.",
 ];
