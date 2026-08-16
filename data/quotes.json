@@ -445,7 +445,13 @@
     "id": "msqv61h3qdai0",
     "quoteNumber": "2026-017",
     "createdAt": "2026-08-13T01:53:06.039Z",
-    "updatedAt": "2026-08-13T03:16:25.973Z",
-    "includeMaintenancePlans": true
+    "updatedAt": "2026-08-13T04:55:11.101Z",
+    "includeMaintenancePlans": true,
+    "selectedMaintenancePlans": [
+      "website-care",
+      "complete-digital-care",
+      "qr-landing-page-care",
+      "hosting-only"
+    ]
   }
 ]

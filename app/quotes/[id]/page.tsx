@@ -7,7 +7,7 @@ import TopBar from "@/components/layout/TopBar";
 import Card from "@/components/ui/Card";
 import { Quote, Client, QuoteItem } from "@/lib/types";
 import { formatCurrency } from "@/lib/finance";
-import { ArrowLeft, Plus, Trash2, Save, RefreshCw, AlertTriangle } from "lucide-react";
+import { ArrowLeft, Plus, Trash2, Save, RefreshCw, AlertTriangle, Check } from "lucide-react";
 import { useNavigationGuard } from "@/contexts/NavigationGuard";
 import { apiFetch } from "@/lib/api";
 import { convertQuoteToInvoice, CONVERTIBLE_QUOTE_STATUSES } from "@/lib/quoteToInvoice";
@@ -105,6 +105,16 @@ export default function QuoteDetailPage() {
     const taxAmount = subtotal * (rate / 100);
     setHasUnsaved(true);
     setForm((f) => ({ ...f, taxRate: rate, taxAmount, total: subtotal + taxAmount }));
+  };
+
+  // Visual-only: marks which maintenance plan(s) are selected/offered for this
+  // quote. Does not affect pricing, totals, or which cards are shown — the
+  // master "Add Maintenance & Support Plans" checkbox controls visibility.
+  const toggleSelectedPlan = (planId: string) => {
+    const current = form.selectedMaintenancePlans ?? [];
+    const next = current.includes(planId) ? current.filter((id) => id !== planId) : [...current, planId];
+    setHasUnsaved(true);
+    setForm({ ...form, selectedMaintenancePlans: next });
   };
 
   const save = async () => {
@@ -297,11 +307,13 @@ export default function QuoteDetailPage() {
           {form.includeMaintenancePlans && (
           <div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 12 }}>
-            {MAINTENANCE_PLANS.map((plan) => (
+            {MAINTENANCE_PLANS.map((plan) => {
+              const isSelected = (form.selectedMaintenancePlans ?? []).includes(plan.id);
+              return (
               <div
-                key={plan.name}
+                key={plan.id}
                 style={{
-                  border: plan.featured ? "1.5px solid var(--carbon)" : "1px solid var(--border)",
+                  border: plan.featured ? "1.5px solid var(--carbon)" : isSelected ? "1.25px solid var(--beige)" : "1px solid var(--border)",
                   borderRadius: 8,
                   padding: 14,
                   backgroundColor: plan.featured ? "var(--input-bg)" : "var(--bg-card)",
@@ -309,24 +321,49 @@ export default function QuoteDetailPage() {
                   flexDirection: "column",
                 }}
               >
-                {plan.badge && (
-                  <span
-                    style={{
-                      alignSelf: "flex-start",
-                      backgroundColor: "var(--carbon)",
-                      color: "var(--beige)",
-                      fontSize: 9.5,
-                      fontWeight: 700,
-                      letterSpacing: 0.5,
-                      textTransform: "uppercase",
-                      padding: "3px 8px",
-                      borderRadius: 4,
-                      marginBottom: 8,
-                    }}
-                  >
-                    {plan.badge}
-                  </span>
-                )}
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8, marginBottom: 8 }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                    {plan.badge && (
+                      <span
+                        style={{
+                          backgroundColor: "var(--carbon)",
+                          color: "var(--beige)",
+                          fontSize: 9.5,
+                          fontWeight: 700,
+                          letterSpacing: 0.5,
+                          textTransform: "uppercase",
+                          padding: "3px 8px",
+                          borderRadius: 4,
+                        }}
+                      >
+                        {plan.badge}
+                      </span>
+                    )}
+                    {isSelected && (
+                      <span
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: 3,
+                          backgroundColor: "var(--beige)",
+                          color: "var(--carbon)",
+                          fontSize: 9.5,
+                          fontWeight: 700,
+                          letterSpacing: 0.5,
+                          textTransform: "uppercase",
+                          padding: "3px 8px",
+                          borderRadius: 4,
+                        }}
+                      >
+                        <Check size={10} /> Selected
+                      </span>
+                    )}
+                  </div>
+                  <label style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10.5, color: "var(--text-muted)", cursor: "pointer", flexShrink: 0 }}>
+                    <input type="checkbox" checked={isSelected} onChange={() => toggleSelectedPlan(plan.id)} style={{ accentColor: "var(--beige)", cursor: "pointer" }} />
+                    Selected
+                  </label>
+                </div>
                 <div style={{ fontSize: 12.5, fontWeight: 700, color: "var(--text-primary)", textTransform: "uppercase", letterSpacing: 0.3 }}>{plan.name}</div>
                 <div style={{ margin: "6px 0 10px", display: "flex", alignItems: "baseline", gap: 4 }}>
                   <span style={{ fontSize: 22, fontWeight: 700, color: "var(--text-primary)" }}>{plan.price}</span>
@@ -345,7 +382,8 @@ export default function QuoteDetailPage() {
                   </p>
                 )}
               </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Hosting-only, visually separated */}
@@ -356,24 +394,56 @@ export default function QuoteDetailPage() {
               justifyContent: "space-between",
               alignItems: "center",
               gap: 10,
-              border: "1px dashed var(--border)",
+              border: (form.selectedMaintenancePlans ?? []).includes(HOSTING_ONLY.id) ? "1.25px dashed var(--beige)" : "1px dashed var(--border)",
               borderRadius: 8,
               padding: "12px 16px",
               marginTop: 14,
               backgroundColor: "var(--input-bg)",
             }}
           >
-            <div style={{ maxWidth: 460 }}>
-              <div style={{ fontSize: 11, fontWeight: 700, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 0.6, marginBottom: 3 }}>
-                {HOSTING_ONLY.label}
+            <div style={{ maxWidth: 400 }}>
+              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, marginBottom: 3 }}>
+                <span style={{ fontSize: 11, fontWeight: 700, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 0.6 }}>
+                  {HOSTING_ONLY.label}
+                </span>
+                {(form.selectedMaintenancePlans ?? []).includes(HOSTING_ONLY.id) && (
+                  <span
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 3,
+                      backgroundColor: "var(--beige)",
+                      color: "var(--carbon)",
+                      fontSize: 9.5,
+                      fontWeight: 700,
+                      letterSpacing: 0.5,
+                      textTransform: "uppercase",
+                      padding: "3px 8px",
+                      borderRadius: 4,
+                    }}
+                  >
+                    <Check size={10} /> Selected
+                  </span>
+                )}
               </div>
               <div style={{ fontSize: 11.5, color: "var(--text-muted)", lineHeight: 1.5 }}>
                 {HOSTING_ONLY.description}
               </div>
             </div>
-            <div style={{ textAlign: "right" }}>
-              <div style={{ fontSize: 18, fontWeight: 700, color: "var(--text-primary)" }}>{HOSTING_ONLY.price}</div>
-              <div style={{ fontSize: 10.5, color: "var(--text-muted)" }}>{HOSTING_ONLY.unit}</div>
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <div style={{ textAlign: "right" }}>
+                <div style={{ fontSize: 18, fontWeight: 700, color: "var(--text-primary)" }}>{HOSTING_ONLY.price}</div>
+                <div style={{ fontSize: 10.5, color: "var(--text-muted)" }}>{HOSTING_ONLY.unit}</div>
+              </div>
+              <label style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10.5, color: "var(--text-muted)", cursor: "pointer" }}>
+                <input
+                  type="checkbox"
+                  checked={(form.selectedMaintenancePlans ?? []).includes(HOSTING_ONLY.id)}
+                  onChange={() => toggleSelectedPlan(HOSTING_ONLY.id)}
+                  style={{ accentColor: "var(--beige)", cursor: "pointer" }}
+                />
+                Selected
+              </label>
             </div>
           </div>
 

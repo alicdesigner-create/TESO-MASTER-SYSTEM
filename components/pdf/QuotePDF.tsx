@@ -1,7 +1,7 @@
 import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 import { Quote, Client } from "@/lib/types";
 import { formatLocalDate } from "@/lib/date";
-import { HOSTING_ONLY, WEBSITE_DIGITAL_SUPPORT } from "@/lib/maintenancePlans";
+import { ALL_MAINTENANCE_CARDS } from "@/lib/maintenancePlans";
 
 const C = {
   carbon: "#202120",
@@ -58,14 +58,18 @@ const s = StyleSheet.create({
   sectionTitle: { fontSize: 8, fontFamily: "Helvetica-Bold", color: C.carbon, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6, paddingBottom: 4, borderBottom: 1, borderColor: C.border },
   termText: { fontSize: 7.5, color: C.textMuted, lineHeight: 1.7, marginBottom: 3 },
   termBullet: { fontSize: 8, color: C.textMuted, lineHeight: 1.9, marginBottom: 7 },
-  // Hosting-only option
-  hostingBox: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", borderWidth: 1, borderColor: C.border, borderStyle: "dashed", borderRadius: 4, paddingHorizontal: 12, paddingVertical: 10, marginTop: 10, marginBottom: 10, backgroundColor: "#fbfbfa" },
-  hostingLeft: { flexDirection: "column", flexShrink: 1, paddingRight: 10 },
-  hostingLabel: { fontSize: 7, fontFamily: "Helvetica-Bold", color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.8, marginBottom: 3 },
-  hostingDesc: { fontSize: 7.3, color: C.textMuted, lineHeight: 1.5 },
-  hostingPriceBox: { alignItems: "flex-end" },
-  hostingPrice: { fontSize: 13, fontFamily: "Helvetica-Bold", color: C.carbon },
-  hostingPriceUnit: { fontSize: 7, color: C.textMuted },
+  // Maintenance plan cards — 2x2 comparison grid
+  plansIntro: { fontSize: 7.5, color: C.textMuted, lineHeight: 1.6, marginBottom: 10 },
+  plansGrid: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
+  planCard: { width: "47%", borderWidth: 1, borderColor: C.border, borderRadius: 4, paddingHorizontal: 11, paddingVertical: 11, marginBottom: 10 },
+  planCardFeatured: { width: "47%", borderWidth: 1.5, borderColor: C.carbon, borderRadius: 4, paddingHorizontal: 11, paddingVertical: 11, marginBottom: 10, backgroundColor: "#faf8f5" },
+  planBadge: { alignSelf: "flex-start", backgroundColor: C.carbon, color: C.beige, fontSize: 6, fontFamily: "Helvetica-Bold", letterSpacing: 0.5, textTransform: "uppercase", paddingHorizontal: 6, paddingVertical: 3, borderRadius: 2, marginBottom: 6 },
+  planName: { fontSize: 8.5, fontFamily: "Helvetica-Bold", color: C.carbon, textTransform: "uppercase", letterSpacing: 0.3, marginBottom: 3 },
+  planPriceRow: { flexDirection: "row", alignItems: "baseline", marginBottom: 8 },
+  planPrice: { fontSize: 15, fontFamily: "Helvetica-Bold", color: C.carbon },
+  planPriceUnit: { fontSize: 7.5, color: C.textMuted, marginLeft: 3 },
+  planFeature: { fontSize: 7.3, color: C.textDark, lineHeight: 1.6, marginBottom: 2 },
+  planNote: { fontSize: 6.8, color: C.textMuted, fontFamily: "Helvetica-Oblique", lineHeight: 1.5, marginTop: 7, paddingTop: 6, borderTop: 1, borderColor: C.border },
   // Signatures
   sigSection: { flexDirection: "row", marginTop: 42, gap: 24 },
   sigBlock: { flex: 1 },
@@ -181,23 +185,31 @@ export default function QuotePDF({ quote, client }: Props) {
           </View>
         </View>
 
-        {/* WEBSITE & DIGITAL SUPPORT + HOSTING-ONLY (optional, per-quote toggle) */}
+        {/* MAINTENANCE & SUPPORT PLANS — all 4 cards, shown as available options.
+            No selection/inclusion state is ever rendered here — that's an
+            internal-only control in the editor (see selectedMaintenancePlans). */}
         {quote.includeMaintenancePlans && (
         <View wrap={false}>
-          <Text style={s.sectionTitle}>Website & Digital Support</Text>
-          {WEBSITE_DIGITAL_SUPPORT.map((line, i) => (
-            <Text key={i} style={s.termText}>• {line}</Text>
-          ))}
+          <Text style={s.sectionTitle}>Maintenance & Support Plans</Text>
+          <Text style={s.plansIntro}>
+            Available support options for this project.
+          </Text>
 
-          <View style={s.hostingBox}>
-            <View style={s.hostingLeft}>
-              <Text style={s.hostingLabel}>{HOSTING_ONLY.label}</Text>
-              <Text style={s.hostingDesc}>{HOSTING_ONLY.description}</Text>
-            </View>
-            <View style={s.hostingPriceBox}>
-              <Text style={s.hostingPrice}>{HOSTING_ONLY.price}</Text>
-              <Text style={s.hostingPriceUnit}>{HOSTING_ONLY.unit}</Text>
-            </View>
+          <View style={s.plansGrid}>
+            {ALL_MAINTENANCE_CARDS.map((plan) => (
+              <View key={plan.id} style={plan.featured ? s.planCardFeatured : s.planCard}>
+                {plan.badge ? <Text style={s.planBadge}>{plan.badge}</Text> : null}
+                <Text style={s.planName}>{plan.name}</Text>
+                <View style={s.planPriceRow}>
+                  <Text style={s.planPrice}>{plan.price}</Text>
+                  <Text style={s.planPriceUnit}>{plan.unit}</Text>
+                </View>
+                {plan.features.map((f, i) => (
+                  <Text key={i} style={s.planFeature}>• {f}</Text>
+                ))}
+                {plan.note ? <Text style={s.planNote}>{plan.note}</Text> : null}
+              </View>
+            ))}
           </View>
         </View>
         )}

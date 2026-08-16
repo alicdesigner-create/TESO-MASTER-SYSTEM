@@ -105,6 +105,7 @@ export interface Quote {
   convertedToInvoiceId?: string;
   createdAt: string;
   includeMaintenancePlans?: boolean; // default false — toggles the Maintenance & Support Plans section
+  selectedMaintenancePlans?: string[]; // ids of plans marked as selected/included (see lib/maintenancePlans.ts); purely visual — does not affect pricing/totals
 }
 
 export interface InvoiceItem {

@@ -25,8 +25,19 @@ const btnStyle: React.CSSProperties = {
 };
 
 export default function QuoteDownloadButton({ quote, client }: Props) {
+  // @react-pdf/renderer's PDFDownloadLink updates its blob via an internal
+  // useEffect keyed on the `document` element reference. In practice that
+  // update path can miss changes (e.g. toggling "Add Maintenance & Support
+  // Plans" and downloading right after) because it relies on the library's
+  // async render queue picking up the new content in time. Keying the link
+  // itself on the actual quote/client data forces React to fully unmount
+  // and remount it whenever anything relevant changes, so it always builds
+  // the PDF fresh from the current data instead of a possibly-stale one.
+  const pdfKey = JSON.stringify({ quote, client });
+
   return (
     <PDFDownloadLink
+      key={pdfKey}
       document={<QuotePDF quote={quote} client={client} />}
       fileName={`Quote-${quote.quoteNumber}-${client?.businessName?.replace(/\s+/g, "-") ?? "client"}.pdf`}
       style={{ textDecoration: "none" }}
