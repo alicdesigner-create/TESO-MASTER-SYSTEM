@@ -597,5 +597,14 @@
     "description": "corpoarate email set up for nanas clean (1 email : info@nanasclean.com)",
     "clientId": "mqbuj4ich7ocr",
     "id": "msmqqwww0xwdr"
+  },
+  {
+    "type": "income",
+    "date": "2026-08-09",
+    "amount": 40,
+    "category": "Other Income",
+    "clientId": "mqbuj4ich7ocr",
+    "description": "Domain purchase - Go daddy (nanasclean.com)",
+    "id": "msmqs2h1mcut7"
   }
 ]

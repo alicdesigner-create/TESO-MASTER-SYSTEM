@@ -418,11 +418,13 @@
     ],
     "subtotal": 90,
     "total": 90,
-    "status": "partial",
+    "status": "paid",
     "id": "mskzocjzhc73n",
     "invoiceNumber": "2026-27",
     "createdAt": "2026-08-08T23:12:41.615Z",
     "depositAmount": 45,
-    "updatedAt": "2026-08-08T23:27:42.239Z"
+    "updatedAt": "2026-08-16T15:30:06.059Z",
+    "paidAt": "2026-08-16",
+    "paidAmount": 90
   }
 ]
