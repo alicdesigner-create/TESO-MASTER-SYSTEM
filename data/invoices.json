@@ -426,5 +426,68 @@
     "updatedAt": "2026-08-16T15:30:06.059Z",
     "paidAt": "2026-08-16",
     "paidAmount": 90
+  },
+  {
+    "clientId": "client-dulce",
+    "date": "2026-08-18",
+    "dueDate": "2026-08-15",
+    "status": "unpaid",
+    "subtotal": 40,
+    "total": 40,
+    "items": [
+      {
+        "id": "mszmcj0ak4xe",
+        "description": "Website Hosting & Maintenance –August 2026.",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 40
+      }
+    ],
+    "id": "mszmcj0qirs8h",
+    "invoiceNumber": "2026-28",
+    "createdAt": "2026-08-19T04:56:07.754Z",
+    "updatedAt": "2026-08-19T04:59:55.402Z"
+  },
+  {
+    "clientId": "client-andres",
+    "date": "2026-08-22",
+    "dueDate": "2026-08-22",
+    "status": "unpaid",
+    "subtotal": 40,
+    "total": 40,
+    "items": [
+      {
+        "id": "mszmn7w0ted2",
+        "description": "Landing page - Hosting & Maintenance –August 2026.",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 40
+      }
+    ],
+    "id": "mszmn7wdqp792",
+    "invoiceNumber": "2026-29",
+    "createdAt": "2026-08-19T05:04:26.557Z",
+    "updatedAt": "2026-08-19T05:05:17.211Z"
+  },
+  {
+    "clientId": "mqbuj4ich7ocr",
+    "date": "2026-08-21",
+    "dueDate": "2026-08-21",
+    "status": "unpaid",
+    "subtotal": 40,
+    "total": 40,
+    "items": [
+      {
+        "id": "mszmurlkwu25",
+        "description": "Landing page - Hosting & Maintenance –August 2026.",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 40
+      }
+    ],
+    "id": "mszmurlyue114",
+    "invoiceNumber": "2026-30",
+    "createdAt": "2026-08-19T05:10:18.694Z",
+    "updatedAt": "2026-08-19T05:11:18.641Z"
   }
 ]

@@ -616,5 +616,44 @@
     "description": "50% of $90 - 3 garment purchase and design transfer",
     "notes": "Total amount  $90- paid off",
     "id": "msvyqwhqba5gu"
+  },
+  {
+    "type": "expense",
+    "date": "2026-07-27",
+    "category": "Claude AI / (subscriptions)",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Anthropic",
+    "amount": 20.83,
+    "description": "Claude code July 2026",
+    "id": "mszn4kkmja3ru"
+  },
+  {
+    "type": "expense",
+    "date": "2026-07-18",
+    "amount": 8.33,
+    "category": "ChatGPT (subscriptions)",
+    "vendor": "OPEN AI",
+    "description": "Chat Gpt July 2026",
+    "id": "msznbye1uud56"
+  },
+  {
+    "type": "expense",
+    "date": "2026-08-18",
+    "category": "ChatGPT (subscriptions)",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "OPEN AI",
+    "amount": 8.33,
+    "description": "CHAT GPT AUGUST 2026",
+    "id": "mszng3cnjrjan"
+  },
+  {
+    "type": "expense",
+    "date": "2026-08-18",
+    "category": "Claude AI / (subscriptions)",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "anthropic",
+    "amount": 20.83,
+    "description": "CLaude august 2026",
+    "id": "msznhx8yxm6u4"
   }
 ]
