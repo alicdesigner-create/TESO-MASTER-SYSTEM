@@ -645,5 +645,106 @@
     "amount": 8.33,
     "description": "CHAT GPT AUGUST 2026",
     "id": "mszng3cnjrjan"
+  },
+  {
+    "type": "expense",
+    "date": "2026-08-18",
+    "category": "Claude AI / (subscriptions)",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "anthropic",
+    "amount": 20.83,
+    "description": "CLaude august 2026",
+    "id": "msznhx8yxm6u4"
+  },
+  {
+    "type": "income",
+    "date": "2026-08-23",
+    "category": "P.O.P Items printig",
+    "amount": 531,
+    "clientId": "client-jennifer",
+    "notes": "1000 (Size: 5.5\" x 8.5\" Vertical Paper: 80 lb. Gloss Book Color: Full Color Both Sides)\n1 Residential flyer + design back face + QR code activation\n1 Self inking stamp - 2cm*2cm\n6 Car magnet for  midnight shine cleaners 20\" * 30\"\n",
+    "description": "Invoice #2026-22",
+    "id": "mt6f72hq4thb0"
+  },
+  {
+    "type": "income",
+    "date": "2026-08-21",
+    "category": "P.O.P Items printig",
+    "amount": 325,
+    "clientId": "mrhsj5une0qdp",
+    "description": "Invoice #2026-25",
+    "notes": "1 MBJ Cleaning - Logo design and branding\n1 Business cards + printing of 250 units\n1 Business cards rounded corners finish\n",
+    "id": "mt6ffvzt4o1r4"
+  },
+  {
+    "type": "income",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 40,
+    "date": "2026-08-23",
+    "description": "Invoice #2026-29",
+    "clientId": "client-andres",
+    "invoiceId": "mszmn7wdqp792",
+    "id": "mt6fwuw1e7opz",
+    "notes": "1 Landing page - Hosting & Maintenance –August 2026."
+  },
+  {
+    "type": "income",
+    "date": "2026-08-24",
+    "amount": 150,
+    "category": "P.O.P Items printig",
+    "clientId": "mqbuj4ich7ocr",
+    "description": "Invoice #2026-26",
+    "notes": "2 Custom Performance Polo – Black (Left-Chest Logo) Size M\n1 Custom Performance Polo – Black (Left-Chest Logo) Size L\n1 Custom Performance Polo – Black (Left-Chest Logo) Size 2XL\n4 Back logo printing for t-shirts ($7.00 each x 4)\n",
+    "id": "mt8563y6wlyex"
+  },
+  {
+    "type": "income",
+    "date": "2026-08-24",
+    "amount": 39.3,
+    "clientId": "client-dulce",
+    "category": "Web Design – Recurring / Maintenance",
+    "id": "mt85bv1t049hf",
+    "description": "Invoice #2026-28",
+    "notes": "Website Hosting & Maintenance –August 2026."
+  },
+  {
+    "type": "income",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 40,
+    "date": "2026-08-24",
+    "description": "Invoice #2026-28 - Ember Business Services",
+    "clientId": "client-dulce",
+    "invoiceId": "mszmcj0qirs8h",
+    "id": "mt85d5nv95gyq"
+  },
+  {
+    "type": "expense",
+    "date": "2026-09-07",
+    "category": "Garment Transfer - Print",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Ninja transfers",
+    "amount": 21.76,
+    "description": "DTF transfers - for t shirts - (Boulder)",
+    "id": "mtryc5dqt9j19"
+  },
+  {
+    "type": "income",
+    "date": "2026-09-04",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 50,
+    "clientId": "mqbuj4ich7ocr",
+    "description": "Invoice #2026-30",
+    "notes": "Landing page - Hosting & Maintenance –August 2026.\nPAID LATE (this is for the month of August)",
+    "id": "mtrz209z3kdb3"
+  },
+  {
+    "type": "expense",
+    "date": "2026-09-01",
+    "category": "Google Workspace",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Google",
+    "amount": 8.75,
+    "description": "Invoice-2026-31-Midnight-Shine-Cleaners",
+    "id": "mtrzex8nn0j3p"
   }
 ]

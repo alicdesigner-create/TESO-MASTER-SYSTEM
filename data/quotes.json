@@ -274,7 +274,7 @@
     "updatedAt": "2026-08-05T04:42:06.649Z"
   },
   {
-    "status": "draft",
+    "status": "accepted",
     "date": "2026-08-03",
     "validDays": 30,
     "taxRate": 0,
@@ -299,10 +299,10 @@
     "id": "mscssy5ydny64",
     "quoteNumber": "2026-014",
     "createdAt": "2026-08-03T05:38:09.526Z",
-    "updatedAt": "2026-08-05T04:44:37.774Z"
+    "updatedAt": "2026-08-25T04:12:22.642Z"
   },
   {
-    "status": "sent",
+    "status": "accepted",
     "date": "2026-08-07",
     "validDays": 30,
     "taxRate": 0,
@@ -327,12 +327,12 @@
     "id": "msiilmot5ud22",
     "quoteNumber": "2026-015",
     "createdAt": "2026-08-07T05:39:08.957Z",
-    "updatedAt": "2026-08-08T23:12:41.642Z",
+    "updatedAt": "2026-08-25T04:12:13.847Z",
     "clientId": "msiiobs5m4w0y",
     "convertedToInvoiceId": "mskzocjzhc73n"
   },
   {
-    "status": "sent",
+    "status": "accepted",
     "date": "2026-08-08",
     "validDays": 30,
     "taxRate": 0,
@@ -370,7 +370,37 @@
     "id": "msjx9hp71u01d",
     "quoteNumber": "2026-016",
     "createdAt": "2026-08-08T05:17:23.035Z",
-    "updatedAt": "2026-08-08T23:09:10.930Z",
+    "updatedAt": "2026-08-25T04:12:01.872Z",
     "convertedToInvoiceId": "mskzjtyxd601c"
+  },
+  {
+    "status": "draft",
+    "date": "2026-08-26",
+    "validDays": 30,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "items": [
+      {
+        "id": "mtb2o2ef",
+        "qty": 2,
+        "description": "Polo Deportivo para Mujer Personalizado – Negro (Logo pequeño en el pecho izquierdo) – Talla M",
+        "unitPrice": 26
+      },
+      {
+        "id": "mtb3gg8j",
+        "qty": 8,
+        "description": "Gráficos de Vinilo Personalizados para Puertas de Vehículos – 18\" × 12\" + Instalación (2 por vehiculo)",
+        "unitPrice": 62.375
+      }
+    ],
+    "subtotal": 551,
+    "total": 551,
+    "includeMaintenancePlans": false,
+    "clientId": "client-jennifer",
+    "notes": "2 polos: Fabricados en 100% Polyester Performance / Piqué, un material ligero, transpirable y de secado rápido, con tecnología que ayuda a absorber la humedad y mantener mayor comodidad.\n\n8 gráficos personalizados para vehículos (2 por vehículo), de aproximadamente 18\" × 12\" cada uno. Fabricados en vinilo vehicular para uso exterior, resistente al clima, con cinta de transferencia transparente. Incluye instalación profesional en los 4 vehículos.",
+    "id": "mtb3xdz3hcbib",
+    "quoteNumber": "2026-017",
+    "createdAt": "2026-08-27T05:53:42.399Z",
+    "updatedAt": "2026-08-28T01:50:01.874Z"
   }
 ]

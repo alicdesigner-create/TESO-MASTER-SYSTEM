@@ -211,7 +211,7 @@
     "updatedAt": "2026-08-06T04:45:40.627Z"
   },
   {
-    "status": "unpaid",
+    "status": "paid",
     "date": "2026-08-05",
     "dueDate": "2026-08-12",
     "items": [
@@ -234,7 +234,7 @@
         "description": "Self inking stamp - 2cm*2cm",
         "qty": 1,
         "unitPrice": 0,
-        "amount": 29.5
+        "amount": 30
       },
       {
         "id": "msq8xl70",
@@ -244,13 +244,15 @@
         "amount": 271
       }
     ],
-    "subtotal": 530.5,
-    "total": 530.5,
+    "subtotal": 531,
+    "total": 531,
     "clientId": "client-jennifer",
     "id": "msfl3syys9j22",
     "invoiceNumber": "2026-22",
     "createdAt": "2026-08-05T04:25:57.610Z",
-    "updatedAt": "2026-08-12T15:35:03.139Z"
+    "updatedAt": "2026-08-23T23:09:26.728Z",
+    "paidAt": "2026-08-23",
+    "paidAmount": 531
   },
   {
     "clientId": "client-jennifer",
@@ -318,7 +320,7 @@
     "updatedAt": "2026-08-10T04:48:40.913Z"
   },
   {
-    "status": "unpaid",
+    "status": "paid",
     "date": "2026-08-06",
     "dueDate": "2026-08-14",
     "items": [
@@ -350,7 +352,8 @@
     "id": "msh2kq7cin1ms",
     "invoiceNumber": "2026-25",
     "createdAt": "2026-08-06T05:22:46.824Z",
-    "updatedAt": "2026-08-06T05:23:02.218Z"
+    "updatedAt": "2026-08-23T23:16:20.789Z",
+    "paidAt": "2026-08-21"
   },
   {
     "clientId": "mqbuj4ich7ocr",
@@ -389,11 +392,13 @@
     ],
     "subtotal": 150,
     "total": 150,
-    "status": "unpaid",
+    "status": "paid",
     "id": "mskzjtyxd601c",
     "invoiceNumber": "2026-26",
     "createdAt": "2026-08-08T23:09:10.905Z",
-    "updatedAt": "2026-08-08T23:09:40.751Z"
+    "updatedAt": "2026-08-25T04:03:52.235Z",
+    "paidAt": "2026-08-24",
+    "paidAmount": 150
   },
   {
     "clientId": "msiiobs5m4w0y",
@@ -431,7 +436,7 @@
     "clientId": "client-dulce",
     "date": "2026-08-18",
     "dueDate": "2026-08-15",
-    "status": "unpaid",
+    "status": "paid",
     "subtotal": 40,
     "total": 40,
     "items": [
@@ -446,13 +451,15 @@
     "id": "mszmcj0qirs8h",
     "invoiceNumber": "2026-28",
     "createdAt": "2026-08-19T04:56:07.754Z",
-    "updatedAt": "2026-08-19T04:59:55.402Z"
+    "updatedAt": "2026-08-25T04:10:46.406Z",
+    "paidAt": "2026-08-24",
+    "paidAmount": 40
   },
   {
     "clientId": "client-andres",
     "date": "2026-08-22",
     "dueDate": "2026-08-22",
-    "status": "unpaid",
+    "status": "paid",
     "subtotal": 40,
     "total": 40,
     "items": [
@@ -467,13 +474,15 @@
     "id": "mszmn7wdqp792",
     "invoiceNumber": "2026-29",
     "createdAt": "2026-08-19T05:04:26.557Z",
-    "updatedAt": "2026-08-19T05:05:17.211Z"
+    "updatedAt": "2026-08-23T23:30:25.147Z",
+    "paidAt": "2026-08-23",
+    "paidAmount": 40
   },
   {
     "clientId": "mqbuj4ich7ocr",
     "date": "2026-08-21",
     "dueDate": "2026-08-21",
-    "status": "unpaid",
+    "status": "paid",
     "subtotal": 40,
     "total": 40,
     "items": [
@@ -488,6 +497,40 @@
     "id": "mszmurlyue114",
     "invoiceNumber": "2026-30",
     "createdAt": "2026-08-19T05:10:18.694Z",
-    "updatedAt": "2026-08-19T05:11:08.672Z"
+    "updatedAt": "2026-09-08T01:05:22.695Z",
+    "paidAt": "2026-09-07",
+    "paidAmount": 40
+  },
+  {
+    "clientId": "client-jennifer",
+    "date": "2026-09-07",
+    "dueDate": "2026-10-07",
+    "status": "unpaid",
+    "subtotal": 188,
+    "total": 188,
+    "items": [
+      {
+        "id": "mtrz2smvuv9p",
+        "description": "Monthly Maintenance - Web and Landing Page month of August 2026",
+        "amount": 170
+      },
+      {
+        "id": "mtrz2smvmrw3",
+        "description": "Google workspace - Corporate email (sales@midninghtshinecleaners.com)",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 9
+      },
+      {
+        "id": "mtrz2smv9wj5",
+        "description": "Google workspace - Corporate email (billing@midninghtshinecleaners.com)",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 9
+      }
+    ],
+    "id": "mtrz2sn8m5wde",
+    "invoiceNumber": "2026-31",
+    "createdAt": "2026-09-08T01:10:01.604Z"
   }
 ]
