@@ -505,7 +505,7 @@
     "clientId": "client-jennifer",
     "date": "2026-09-07",
     "dueDate": "2026-10-07",
-    "status": "unpaid",
+    "status": "paid",
     "subtotal": 188,
     "total": 188,
     "items": [
@@ -532,6 +532,8 @@
     "id": "mtrz2sn8m5wde",
     "invoiceNumber": "2026-31",
     "createdAt": "2026-09-08T01:10:01.604Z",
-    "updatedAt": "2026-09-08T01:10:43.868Z"
+    "updatedAt": "2026-09-09T02:48:11.601Z",
+    "paidAt": "2026-09-08",
+    "paidAmount": 188
   }
 ]

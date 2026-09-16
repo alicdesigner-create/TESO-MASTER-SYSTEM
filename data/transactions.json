@@ -756,5 +756,25 @@
     "amount": 20.87,
     "description": "Claude subscription August 2026",
     "id": "mtrzlvzln2ak5"
+  },
+  {
+    "type": "income",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 188,
+    "date": "2026-09-08",
+    "description": "Invoice #2026-31 - Midnight Shine Cleaners",
+    "clientId": "client-jennifer",
+    "invoiceId": "mtrz2sn8m5wde",
+    "id": "mtti0pzy5m5q1"
+  },
+  {
+    "type": "expense",
+    "date": "2026-09-08",
+    "category": "Meals / Other",
+    "paymentMethod": "Visa 9854 (personal)",
+    "vendor": "Burger KING",
+    "amount": 15.24,
+    "description": "Meal for myself (looking for new clients)",
+    "id": "mttmx8dg5hyjb"
   }
 ]

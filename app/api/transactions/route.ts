@@ -11,7 +11,21 @@ export const GET = withErrorHandling(async () => {
 
 export const POST = withErrorHandling(async (req: NextRequest) => {
   const body = await req.json();
+  const existing = getTransactions();
+
+  // Avoid double-booking a payment: if this transaction is tied to an
+  // invoice that already has a transaction recorded, don't create another one.
+  if (body.invoiceId) {
+    const duplicate = existing.find((t) => t.invoiceId === body.invoiceId);
+    if (duplicate) {
+      return NextResponse.json(
+        { error: "Ya existe una transacción registrada para este invoice.", duplicate: true, transaction: duplicate },
+        { status: 409 }
+      );
+    }
+  }
+
   const newTx: Transaction = { ...body, id: generateId() };
-  saveTransactions([...getTransactions(), newTx]);
+  saveTransactions([...existing, newTx]);
   return NextResponse.json(newTx, { status: 201 });
 });

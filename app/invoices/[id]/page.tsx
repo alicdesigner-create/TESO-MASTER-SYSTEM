@@ -114,8 +114,16 @@ export default function InvoiceDetailPage() {
           }),
         });
       } catch (err) {
-        alert(`No se pudo registrar la transacción de pago. La factura NO se marcó como pagada, intenta de nuevo.\n\n${(err as Error).message}`);
-        return;
+        const message = (err as Error).message;
+        if (message === "Ya existe una transacción registrada para este invoice.") {
+          // A transaction for this invoice already exists (e.g. added manually
+          // in /finance) — don't create a duplicate, just warn and continue
+          // marking the invoice as paid, since the payment IS already recorded.
+          alert(message);
+        } else {
+          alert(`No se pudo registrar la transacción de pago. La factura NO se marcó como pagada, intenta de nuevo.\n\n${message}`);
+          return;
+        }
       }
     }
     setHasUnsaved(true);

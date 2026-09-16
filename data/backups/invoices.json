@@ -511,19 +511,19 @@
     "items": [
       {
         "id": "mtrz2smvuv9p",
-        "description": "Monthly Maintenance - Web and Landing Page month of August 2026",
+        "description": "Monthly Maintenance - Web and Landing Page month of Sept 2026",
         "amount": 170
       },
       {
         "id": "mtrz2smvmrw3",
-        "description": "Google workspace - Corporate email (sales@midninghtshinecleaners.com)",
+        "description": "Google workspace - Month of Sept 2026 Corporate email (sales@midninghtshinecleaners.com)",
         "qty": 1,
         "unitPrice": 0,
         "amount": 9
       },
       {
         "id": "mtrz2smv9wj5",
-        "description": "Google workspace - Corporate email (billing@midninghtshinecleaners.com)",
+        "description": "Google workspace - Month of Sept 2026 Corporate email (billing@midninghtshinecleaners.com)",
         "qty": 1,
         "unitPrice": 0,
         "amount": 9
@@ -531,6 +531,7 @@
     ],
     "id": "mtrz2sn8m5wde",
     "invoiceNumber": "2026-31",
-    "createdAt": "2026-09-08T01:10:01.604Z"
+    "createdAt": "2026-09-08T01:10:01.604Z",
+    "updatedAt": "2026-09-08T01:10:43.868Z"
   }
 ]

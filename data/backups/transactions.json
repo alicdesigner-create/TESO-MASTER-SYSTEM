@@ -746,5 +746,25 @@
     "amount": 8.75,
     "description": "Invoice-2026-31-Midnight-Shine-Cleaners",
     "id": "mtrzex8nn0j3p"
+  },
+  {
+    "type": "expense",
+    "date": "2026-08-27",
+    "category": "Claude AI / (subscriptions)",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "\t Receipt from Anthropic, PBC",
+    "amount": 20.87,
+    "description": "Claude subscription August 2026",
+    "id": "mtrzlvzln2ak5"
+  },
+  {
+    "type": "income",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 188,
+    "date": "2026-09-08",
+    "description": "Invoice #2026-31 - Midnight Shine Cleaners",
+    "clientId": "client-jennifer",
+    "invoiceId": "mtrz2sn8m5wde",
+    "id": "mtti0pzy5m5q1"
   }
 ]

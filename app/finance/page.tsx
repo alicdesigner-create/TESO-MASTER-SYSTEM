@@ -276,6 +276,11 @@ export default function FinancePage() {
                                 <span style={{ fontSize: 11, padding: "2px 7px", borderRadius: 3, backgroundColor: t.type === "income" ? "var(--green-bg)" : "var(--red-bg)", color: t.type === "income" ? "var(--green-text)" : "var(--red-text)", textTransform: "capitalize", fontWeight: 600 }}>
                                   {t.type}
                                 </span>
+                                {t.invoiceId && (
+                                  <span title="Creada automáticamente al marcar el invoice como pagado" style={{ marginLeft: 6, fontSize: 9, padding: "2px 6px", borderRadius: 3, backgroundColor: "var(--neutral-bg)", color: "var(--neutral-text)", fontWeight: 600, letterSpacing: "0.4px", textTransform: "uppercase" }}>
+                                    Auto
+                                  </span>
+                                )}
                               </td>
                               <td style={{ padding: "9px 14px", color: "var(--text-muted)", fontSize: 11 }}>{t.category}</td>
                               <td style={{ padding: "9px 14px", color: "var(--text-primary)", fontSize: 12 }}>{t.description ?? "—"}</td>
