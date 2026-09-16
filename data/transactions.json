@@ -776,5 +776,28 @@
     "amount": 15.24,
     "description": "Meal for myself (looking for new clients)",
     "id": "mttmx8dg5hyjb"
+  },
+  {
+    "type": "expense",
+    "date": "2026-09-15",
+    "category": "Garment Transfer - Print",
+    "paymentMethod": "Visa 9854 (personal)",
+    "vendor": "AMAZON",
+    "amount": 42.29,
+    "clientId": "client-debbie",
+    "description": "Hat , fanny pack for KG + Gift",
+    "notes": "1 free sample to transfer 1 logo on hat and fanny pack for KG merch",
+    "id": "mu3l1tkn4luzi"
+  },
+  {
+    "type": "expense",
+    "date": "2026-09-15",
+    "category": "Garment Transfer - Print",
+    "paymentMethod": "Visa 9854 (personal)",
+    "vendor": "Ninja transfers",
+    "amount": 32.75,
+    "description": "transfers para aparell samples (Cycle performance)",
+    "notes": "Ninja Transfers – DTF Gang Sheets Order #NT-2586190\nTotal order: $83.16 — $50.41 paid with Shopify Store Credit; $32.75 charged to card.",
+    "id": "mu3myw8bya8sk"
   }
 ]
