@@ -57,6 +57,7 @@ const s = StyleSheet.create({
   // Sections
   sectionTitle: { fontSize: 8, fontFamily: "Helvetica-Bold", color: C.carbon, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6, paddingBottom: 4, borderBottom: 1, borderColor: C.border },
   termText: { fontSize: 7.5, color: C.textMuted, lineHeight: 1.7, marginBottom: 3 },
+  notesText: { fontSize: 8, color: "#555555", lineHeight: 1.8 },
   termBullet: { fontSize: 8, color: C.textMuted, lineHeight: 1.9, marginBottom: 7 },
   // Maintenance plan cards — 2x2 comparison grid
   plansIntro: { fontSize: 7.5, color: C.textMuted, lineHeight: 1.6, marginBottom: 10 },
@@ -185,6 +186,14 @@ export default function QuotePDF({ quote, client }: Props) {
           </View>
         </View>
 
+        {/* NOTES */}
+        {quote.notes ? (
+          <View style={{ marginBottom: 18 }} wrap={false}>
+            <Text style={s.sectionTitle}>Notes</Text>
+            <Text style={s.notesText}>{quote.notes}</Text>
+          </View>
+        ) : null}
+
         {/* MAINTENANCE & SUPPORT PLANS — all 4 cards, shown as available options.
             No selection/inclusion state is ever rendered here — that's an
             internal-only control in the editor (see selectedMaintenancePlans). */}
@@ -214,8 +223,9 @@ export default function QuotePDF({ quote, client }: Props) {
         </View>
         )}
 
-        {/* TERMS & ACCEPTANCE — dedicated page, always starts clean at the top */}
-        <View break>
+        {/* TERMS & ACCEPTANCE — flows after content; only pushed to a new page
+            by react-pdf's automatic pagination if it doesn't fit. */}
+        <View wrap={false}>
           <Text style={s.sectionTitle}>Terms and Conditions</Text>
           {buildTerms(quote.validDays).map((t, i) => (
             <Text key={i} style={s.termBullet}>• {t}</Text>

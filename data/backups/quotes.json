@@ -401,6 +401,30 @@
     "id": "mtb3xdz3hcbib",
     "quoteNumber": "2026-017",
     "createdAt": "2026-08-27T05:53:42.399Z",
-    "updatedAt": "2026-08-28T01:49:53.250Z"
+    "updatedAt": "2026-08-28T01:50:01.874Z"
+  },
+  {
+    "status": "sent",
+    "date": "2026-09-19",
+    "validDays": 15,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "items": [
+      {
+        "id": "mu8jjgkf",
+        "qty": 1,
+        "description": "Custom 4x8 Banner – Design & Production",
+        "unitPrice": 249.99
+      }
+    ],
+    "subtotal": 249.99,
+    "total": 249.99,
+    "includeMaintenancePlans": false,
+    "clientId": "mqbuj4ich7ocr",
+    "notes": "",
+    "id": "mu8k0spte8047",
+    "quoteNumber": "2026-018",
+    "createdAt": "2026-09-19T15:40:39.137Z",
+    "updatedAt": "2026-09-19T16:07:01.626Z"
   }
 ]
