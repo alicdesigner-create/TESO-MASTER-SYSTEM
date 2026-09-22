@@ -426,5 +426,27 @@
     "quoteNumber": "2026-018",
     "createdAt": "2026-09-19T15:40:39.137Z",
     "updatedAt": "2026-09-19T16:15:18.262Z"
+  },
+  {
+    "status": "sent",
+    "date": "2026-09-20",
+    "validDays": 30,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "items": [
+      {
+        "id": "muamjkqq",
+        "qty": 40,
+        "description": "Custom Sun Hat – KG Facility Solutions Logo (DTF Print) — $14.99/ea",
+        "unitPrice": 14.99
+      }
+    ],
+    "subtotal": 599.6,
+    "total": 599.6,
+    "includeMaintenancePlans": false,
+    "clientId": "muamhv5aq0jsf",
+    "id": "muamlitnc9cz3",
+    "quoteNumber": "2026-019",
+    "createdAt": "2026-09-21T02:28:17.675Z"
   }
 ]

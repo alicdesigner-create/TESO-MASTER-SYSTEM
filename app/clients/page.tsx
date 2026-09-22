@@ -5,7 +5,7 @@ import TopBar from "@/components/layout/TopBar";
 import Modal from "@/components/ui/Modal";
 import Card from "@/components/ui/Card";
 import { Client } from "@/lib/types";
-import { Plus, Search, User, Mail, Phone, ChevronRight, Trash2 } from "lucide-react";
+import { Plus, Search, User, Mail, Phone, ChevronRight, Trash2, Pencil } from "lucide-react";
 import Link from "next/link";
 import { apiFetch } from "@/lib/api";
 
@@ -26,11 +26,19 @@ export default function ClientsPage() {
   const save = async () => {
     setLoading(true);
     try {
-      await apiFetch("/api/clients", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      if (form.id) {
+        await apiFetch(`/api/clients/${form.id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        });
+      } else {
+        await apiFetch("/api/clients", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        });
+      }
       await load();
       setShowForm(false);
       setForm({});
@@ -39,6 +47,11 @@ export default function ClientsPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const editClient = (c: Client) => {
+    setForm(c);
+    setShowForm(true);
   };
 
   const del = async (id: string) => {
@@ -141,7 +154,15 @@ export default function ClientsPage() {
                   </div>
                   <div style={{ display: "flex", gap: 4 }}>
                     <button
+                      onClick={() => editClient(c)}
+                      title="Edit client"
+                      style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-muted)", padding: 4 }}
+                    >
+                      <Pencil size={13} />
+                    </button>
+                    <button
                       onClick={() => del(c.id)}
+                      title="Delete client"
                       style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-muted)", padding: 4 }}
                     >
                       <Trash2 size={13} />
@@ -160,7 +181,7 @@ export default function ClientsPage() {
         )}
       </div>
 
-      <Modal open={showForm} onClose={() => { setShowForm(false); setForm({}); }} title="New Client">
+      <Modal open={showForm} onClose={() => { setShowForm(false); setForm({}); }} title={form.id ? "Edit Client" : "New Client"}>
         <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           <Field label="Business Name *">
             <input
@@ -213,7 +234,7 @@ export default function ClientsPage() {
               disabled={!form.businessName || !form.contactName || loading}
               style={btnPrimary}
             >
-              {loading ? "Saving..." : "Save Client"}
+              {loading ? "Saving..." : form.id ? "Save Changes" : "Save Client"}
             </button>
           </div>
         </div>

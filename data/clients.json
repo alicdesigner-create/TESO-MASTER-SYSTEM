@@ -28,7 +28,7 @@
   },
   {
     "id": "client-debbie",
-    "businessName": "KG Facility Solutions / Germ Eviction",
+    "businessName": "Germ Eviction",
     "contactName": "Debbie Garay",
     "email": "alirioc@kgfsco.com",
     "phone": "",
@@ -96,5 +96,13 @@
     "phone": "na",
     "id": "msiiobs5m4w0y",
     "createdAt": "2026-08-07T05:41:14.789Z"
+  },
+  {
+    "businessName": "KG Facility Solutions",
+    "contactName": "Debbie Garay",
+    "email": "debbie@kgfsco.com",
+    "phone": "(303) 944-6627",
+    "id": "muamhv5aq0jsf",
+    "createdAt": "2026-09-21T02:25:27.022Z"
   }
 ]
