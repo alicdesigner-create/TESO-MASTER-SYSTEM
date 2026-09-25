@@ -799,5 +799,15 @@
     "description": "transfers para aparell samples (Cycle performance)",
     "notes": "Ninja Transfers – DTF Gang Sheets Order #NT-2586190\nTotal order: $83.16 — $50.41 paid with Shopify Store Credit; $32.75 charged to card.",
     "id": "mu3myw8bya8sk"
+  },
+  {
+    "type": "income",
+    "date": "2026-09-21",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 49,
+    "clientId": "mqbuj4ich7ocr",
+    "description": "Invoice #2026-34",
+    "notes": "Landing page - Hosting & Maintenance –Sept 2026.\nGoogle workspace (Info@nanasclean.com) Sept 2026.\n",
+    "id": "muc7y6z86z9y4"
   }
 ]

@@ -809,5 +809,16 @@
     "description": "Invoice #2026-34",
     "notes": "Landing page - Hosting & Maintenance –Sept 2026.\nGoogle workspace (Info@nanasclean.com) Sept 2026.\n",
     "id": "muc7y6z86z9y4"
+  },
+  {
+    "type": "expense",
+    "date": "2026-09-23",
+    "category": "Garment Transfer - Print",
+    "paymentMethod": "Visa 9854 (personal)",
+    "vendor": "Walmart",
+    "amount": 182.77,
+    "description": "Garments for transfer ",
+    "notes": "the purchased garments are  meant to be  customized samples to  offer in retail stores  in boulder an centennial Colorado",
+    "id": "mugexb603g8qz"
   }
 ]
