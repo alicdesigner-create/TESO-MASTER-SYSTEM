@@ -582,7 +582,7 @@
     "clientId": "mqbuj4ich7ocr",
     "date": "2026-09-21",
     "dueDate": "2026-09-21",
-    "status": "unpaid",
+    "status": "paid",
     "subtotal": 49,
     "total": 49,
     "items": [
@@ -604,6 +604,8 @@
     "id": "mu3pdev2fe0ov",
     "invoiceNumber": "2026-34",
     "createdAt": "2026-09-16T06:11:34.910Z",
-    "updatedAt": "2026-09-16T06:13:14.636Z"
+    "updatedAt": "2026-09-22T05:11:42.707Z",
+    "paidAt": "2026-09-21",
+    "paidAmount": 49
   }
 ]

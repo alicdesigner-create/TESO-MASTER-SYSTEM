@@ -580,22 +580,30 @@
   },
   {
     "clientId": "mqbuj4ich7ocr",
-    "date": "2026-09-16",
-    "dueDate": "2026-10-16",
+    "date": "2026-09-21",
+    "dueDate": "2026-09-21",
     "status": "unpaid",
-    "subtotal": 40,
-    "total": 40,
+    "subtotal": 49,
+    "total": 49,
     "items": [
       {
         "id": "mu3pdeup2q51",
-        "description": "Landing page - Hosting & Maintenance –August 2026.",
+        "description": "Landing page - Hosting & Maintenance –Sept 2026.",
         "qty": 1,
         "unitPrice": 0,
         "amount": 40
+      },
+      {
+        "id": "mu3pe0bn",
+        "description": "Google workspace (Info@nanasclean.com) Sept 2026.",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 9
       }
     ],
     "id": "mu3pdev2fe0ov",
     "invoiceNumber": "2026-34",
-    "createdAt": "2026-09-16T06:11:34.910Z"
+    "createdAt": "2026-09-16T06:11:34.910Z",
+    "updatedAt": "2026-09-16T06:13:14.636Z"
   }
 ]
