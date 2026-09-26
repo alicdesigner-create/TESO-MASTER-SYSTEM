@@ -820,5 +820,25 @@
     "description": "Garments for transfer ",
     "notes": "the purchased garments are  meant to be  customized samples to  offer in retail stores  in boulder an centennial Colorado",
     "id": "mugexb603g8qz"
+  },
+  {
+    "type": "income",
+    "date": "2026-09-25",
+    "category": "Web Design – New Clients",
+    "amount": 500,
+    "clientId": "mqbuj4ich7ocr",
+    "id": "muix2g9e59wpb",
+    "description": "Invoice #2026-35",
+    "notes": "Web Design & Development – 50% Remaining Website: https://www.nanasclean.com/"
+  },
+  {
+    "type": "income",
+    "date": "2026-09-26",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 39.3,
+    "clientId": "client-dulce",
+    "id": "muixeidz9i3bf",
+    "description": "Invoice #2026-32",
+    "notes": "Emberb - monthly Website Hosting & Maintenance –Sept 2026."
   }
 ]
