@@ -630,5 +630,28 @@
     "invoiceNumber": "2026-35",
     "createdAt": "2026-09-26T21:46:50.313Z",
     "updatedAt": "2026-09-26T21:47:27.511Z"
+  },
+  {
+    "clientId": "muqbcg82re9ly",
+    "quoteId": "muqbcmgskdwak",
+    "date": "2026-10-01",
+    "dueDate": "2026-11-02",
+    "items": [
+      {
+        "id": "muqdzqp9edg2",
+        "description": "Website Design Project — 50% Deposit",
+        "qty": 1,
+        "unitPrice": 850,
+        "amount": 425
+      }
+    ],
+    "subtotal": 425,
+    "total": 425,
+    "status": "unpaid",
+    "id": "muqdzqsl2rgau",
+    "invoiceNumber": "2026-36",
+    "createdAt": "2026-10-02T03:11:43.461Z",
+    "updatedAt": "2026-10-02T03:50:00.288Z",
+    "notes": "Due upon receipt. This invoice covers the 50% project deposit of $425 under Quote #2026-020. Work will begin once payment is received."
   }
 ]

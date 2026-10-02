@@ -840,5 +840,16 @@
     "id": "muixeidz9i3bf",
     "description": "Invoice #2026-32",
     "notes": "Emberb - monthly Website Hosting & Maintenance –Sept 2026."
+  },
+  {
+    "type": "expense",
+    "date": "2026-10-01",
+    "category": "Google Workspace",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Google",
+    "amount": 8.75,
+    "description": "workspace for studio@tesographics.com October 2026",
+    "notes": "Paid with the new Debit card of teso 5071",
+    "id": "muqa1mrh0c8ti"
   }
 ]

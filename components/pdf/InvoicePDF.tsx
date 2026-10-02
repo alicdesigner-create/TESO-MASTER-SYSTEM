@@ -1,4 +1,4 @@
-import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
+import { Document, Page, Text, View, Image, StyleSheet } from "@react-pdf/renderer";
 import { Invoice, Client } from "@/lib/types";
 import { formatLocalDate } from "@/lib/date";
 
@@ -69,6 +69,11 @@ const s = StyleSheet.create({
 
   // Payment info
   paySection: { marginBottom: 10 },
+  payContent: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start" },
+  payMethods: { flexGrow: 1 },
+  zelleBlock: { width: 112, alignItems: "center", marginLeft: 12, padding: 5, borderWidth: 1, borderColor: C.border },
+  zelleQr: { width: 96, height: 96 },
+  zelleCaption: { fontSize: 7, fontFamily: "Helvetica-Bold", color: C.carbon, textAlign: "center", marginTop: 4 },
   sectionTitle: { fontSize: 8, fontFamily: "Helvetica-Bold", color: C.carbon, textTransform: "uppercase", letterSpacing: 1, marginBottom: 9, paddingBottom: 5, borderBottom: 1, borderColor: C.border },
   payRow: { flexDirection: "row", marginBottom: 5 },
   payLabel: { fontSize: 8, color: C.textMuted, width: 160 },
@@ -210,18 +215,26 @@ export default function InvoicePDF({ invoice, client }: Props) {
         {/* PAYMENT INFORMATION */}
         <View style={s.paySection}>
           <Text style={s.sectionTitle}>Payment Information</Text>
-          {[
-            ["Bank", "Bank of America"],
-            ["Account Number", "139108056283"],
-            ["Routing (Electronic)", "123103716"],
-            ["Routing (Wire Transfer)", "026009593"],
-            ["Zelle", "studio@tesographics.com"],
-          ].map(([label, value]) => (
-            <View key={label} style={s.payRow}>
-              <Text style={s.payLabel}>{label}</Text>
-              <Text style={s.payValue}>{value}</Text>
+          <View style={s.payContent}>
+            <View style={s.payMethods}>
+              {[
+                ["Bank", "Bank of America"],
+                ["Account Number", "139108056283"],
+                ["Routing (Electronic)", "123103716"],
+                ["Routing (Wire Transfer)", "026009593"],
+                ["Zelle", "studio@tesographics.com"],
+              ].map(([label, value]) => (
+                <View key={label} style={s.payRow}>
+                  <Text style={s.payLabel}>{label}</Text>
+                  <Text style={s.payValue}>{value}</Text>
+                </View>
+              ))}
             </View>
-          ))}
+            <View style={s.zelleBlock}>
+              <Image src="/images/zelle-qr.png" style={s.zelleQr} />
+              <Text style={s.zelleCaption}>Pay with Zelle — scan to send</Text>
+            </View>
+          </View>
         </View>
 
         {/* PAYMENT TERMS & NOTES */}
@@ -229,7 +242,6 @@ export default function InvoicePDF({ invoice, client }: Props) {
           <Text style={s.sectionTitle}>Payment Terms & Notes</Text>
           <Text style={s.notesText}>
             Payment Due Upon Receipt.
-            {"\n"}Late payments may incur a 5% monthly late fee.
             {"\n"}Final files and deliverables are released only after full payment is received.
             {"\n"}For questions regarding this invoice, contact studio@tesographics.com or (303) 525-3023.
           </Text>

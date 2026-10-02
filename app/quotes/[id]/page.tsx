@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import TopBar from "@/components/layout/TopBar";
 import Card from "@/components/ui/Card";
-import { Quote, Client, QuoteItem } from "@/lib/types";
+import { Quote, Client, QuoteItem, QuoteCondition, QuoteServiceCategory } from "@/lib/types";
 import { formatCurrency } from "@/lib/finance";
 import { ArrowLeft, Plus, Trash2, Save, RefreshCw, AlertTriangle, Check } from "lucide-react";
 import { useNavigationGuard } from "@/contexts/NavigationGuard";
@@ -13,6 +13,7 @@ import { apiFetch } from "@/lib/api";
 import { convertQuoteToInvoice, CONVERTIBLE_QUOTE_STATUSES } from "@/lib/quoteToInvoice";
 import { todayISO } from "@/lib/date";
 import { MAINTENANCE_PLANS, MAINTENANCE_NOTES, HOSTING_ONLY, MAINTENANCE_DISCLAIMER } from "@/lib/maintenancePlans";
+import { DEFAULT_QUOTE_DEFAULTS, fillConditionTemplate, inferQuoteCategories, QUOTE_CATEGORY_LABELS, QuoteConditionTemplate, QuoteDefaults } from "@/lib/quoteDefaults";
 
 const QuoteDownloadButton = dynamic(() => import("@/components/pdf/QuoteDownloadButton"), { ssr: false });
 
@@ -31,7 +32,12 @@ export default function QuoteDetailPage() {
     subtotal: 0,
     total: 0,
     includeMaintenancePlans: false,
+    pricing: DEFAULT_QUOTE_DEFAULTS.pricing,
+    conditions: [],
   });
+  const [quoteDefaults, setQuoteDefaults] = useState<QuoteDefaults>(DEFAULT_QUOTE_DEFAULTS);
+  const [templateDrafts, setTemplateDrafts] = useState<QuoteConditionTemplate[]>(DEFAULT_QUOTE_DEFAULTS.templates);
+  const [defaultsMessage, setDefaultsMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [showNewClient, setShowNewClient] = useState(false);
   const [creatingClient, setCreatingClient] = useState(false);
@@ -41,10 +47,32 @@ export default function QuoteDetailPage() {
   const isNew = id === "new";
 
   useEffect(() => {
-    fetch("/api/clients").then((r) => r.json()).then(setClients);
-    if (!isNew) {
-      fetch(`/api/quotes/${id}`).then((r) => r.json()).then(setForm);
-    }
+    let cancelled = false;
+    const load = async () => {
+      try {
+        const [clientsRes, defaultsRes] = await Promise.all([fetch("/api/clients"), fetch("/api/quote-defaults")]);
+        const [clientData, loadedDefaults] = await Promise.all([clientsRes.json(), defaultsRes.json()]);
+        if (cancelled) return;
+        const mergedDefaults: QuoteDefaults = {
+          pricing: { ...DEFAULT_QUOTE_DEFAULTS.pricing, ...loadedDefaults.pricing },
+          templates: Array.isArray(loadedDefaults.templates) ? loadedDefaults.templates : DEFAULT_QUOTE_DEFAULTS.templates,
+        };
+        setClients(clientData);
+        setQuoteDefaults(mergedDefaults);
+        setTemplateDrafts(mergedDefaults.templates);
+        if (id === "new") {
+          setForm((current) => ({ ...current, pricing: mergedDefaults.pricing, conditions: [] }));
+        } else {
+          const quoteRes = await fetch(`/api/quotes/${id}`);
+          const quote = await quoteRes.json();
+          if (!cancelled) setForm({ ...quote, pricing: quote.pricing ?? mergedDefaults.pricing });
+        }
+      } catch {
+        // Static defaults remain available if local settings cannot be read.
+      }
+    };
+    load();
+    return () => { cancelled = true; };
   }, [id]);
 
   // Sync unsaved state with navigation guard
@@ -69,6 +97,46 @@ export default function QuoteDetailPage() {
   }, [hasUnsaved]);
 
   const clientMap = Object.fromEntries(clients.map((c) => [c.id, c]));
+  const suggestedCategories = inferQuoteCategories((form.items ?? []).map((item) => item.description));
+
+  const addCondition = (template: QuoteConditionTemplate) => {
+    const pricing = form.pricing ?? quoteDefaults.pricing;
+    const condition = fillConditionTemplate(template, pricing, form.validDays ?? 30);
+    setHasUnsaved(true);
+    setForm((current) => ({ ...current, conditions: [...(current.conditions ?? []), condition] }));
+  };
+
+  const updateCondition = (id: string, updates: Partial<QuoteCondition>) => {
+    setHasUnsaved(true);
+    setForm((current) => ({
+      ...current,
+      conditions: (current.conditions ?? []).map((condition) => condition.id === id ? { ...condition, ...updates } : condition),
+    }));
+  };
+
+  const saveQuoteDefaults = async (next: QuoteDefaults, message: string) => {
+    try {
+      const res = await apiFetch("/api/quote-defaults", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(next),
+      });
+      const saved = await res.json() as QuoteDefaults;
+      setQuoteDefaults(saved);
+      setTemplateDrafts(saved.templates);
+      setDefaultsMessage(message);
+      setTimeout(() => setDefaultsMessage(""), 3000);
+    } catch (err) {
+      setDefaultsMessage(`Could not save defaults: ${(err as Error).message}`);
+    }
+  };
+
+  const savePricingAsDefaults = () => saveQuoteDefaults({
+    ...quoteDefaults,
+    pricing: form.pricing ?? quoteDefaults.pricing,
+  }, "Prices saved as defaults for future quotes.");
+
+  const saveTemplatesAsDefaults = () => saveQuoteDefaults({ ...quoteDefaults, templates: templateDrafts }, "Condition templates saved for future quotes.");
 
   const createClient = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -228,7 +296,9 @@ export default function QuoteDetailPage() {
               </button>
             )}
             {!isNew && form.clientId && client && (
-              <QuoteDownloadButton quote={form as Quote} client={client} />
+              hasUnsaved
+                ? <span style={{ fontSize: 11, color: "var(--text-muted)" }}>Save quote to enable PDF</span>
+                : <QuoteDownloadButton quote={form as Quote} client={client} />
             )}
             <button onClick={save} disabled={loading} style={btnPrimary}><Save size={13} /> {loading ? "Saving..." : "Save"}</button>
           </div>
@@ -338,6 +408,101 @@ export default function QuoteDetailPage() {
               </div>
             </div>
           </div>
+        </Card>
+
+        {/* Per-quote pricing terms are snapshots. Only the explicit button writes them to future defaults. */}
+        <Card>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 14 }}>
+            <div>
+              <h3 style={{ margin: 0, fontSize: 13, fontWeight: 600, color: "var(--text-primary)" }}>Pricing terms for this quote</h3>
+              <p style={{ margin: "4px 0 0", fontSize: 11.5, color: "var(--text-muted)" }}>Changes apply to this quote only unless you save them as future defaults.</p>
+            </div>
+            <button type="button" onClick={savePricingAsDefaults} style={btnSecondary}>Save prices as defaults</button>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14 }}>
+            <Field label="Deposit (%)">
+              <input type="number" min="0" max="100" value={form.pricing?.depositPercent ?? quoteDefaults.pricing.depositPercent} onChange={(e) => { setHasUnsaved(true); setForm({ ...form, pricing: { ...(form.pricing ?? quoteDefaults.pricing), depositPercent: Number(e.target.value) || 0 } }); }} style={inputStyle} />
+            </Field>
+            <Field label="Monthly maintenance (USD)">
+              <input type="number" min="0" step="0.01" value={form.pricing?.monthlyMaintenance ?? quoteDefaults.pricing.monthlyMaintenance} onChange={(e) => { setHasUnsaved(true); setForm({ ...form, pricing: { ...(form.pricing ?? quoteDefaults.pricing), monthlyMaintenance: Number(e.target.value) || 0 } }); }} style={inputStyle} />
+            </Field>
+            <Field label="Hourly rate (USD)">
+              <input type="number" min="0" step="0.01" value={form.pricing?.hourlyRate ?? quoteDefaults.pricing.hourlyRate} onChange={(e) => { setHasUnsaved(true); setForm({ ...form, pricing: { ...(form.pricing ?? quoteDefaults.pricing), hourlyRate: Number(e.target.value) || 0 } }); }} style={inputStyle} />
+            </Field>
+          </div>
+        </Card>
+
+        {/* Conditions are selected and saved as editable per-quote snapshots. */}
+        <Card>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 14 }}>
+            <div>
+              <h3 style={{ margin: 0, fontSize: 13, fontWeight: 600, color: "var(--text-primary)" }}>Conditions for this quote</h3>
+              <p style={{ margin: "4px 0 0", fontSize: 11.5, color: "var(--text-muted)" }}>Choose only the conditions that apply. Suggested categories are based on the service descriptions.</p>
+            </div>
+            <button type="button" onClick={() => { setHasUnsaved(true); setForm((current) => ({ ...current, conditions: [...(current.conditions ?? []), { id: `custom-${Date.now()}`, category: "general", title: "Custom condition", text: "" }] })); }} style={btnSecondary}><Plus size={12} /> Add custom</button>
+          </div>
+          {(form.conditions ?? []).length > 0 ? (
+            <div style={{ display: "grid", gap: 10, marginBottom: 16 }}>
+              {(form.conditions ?? []).map((condition) => (
+                <div key={condition.id} style={{ border: "1px solid var(--border)", borderRadius: 6, padding: 12, backgroundColor: "var(--input-bg)" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, minWidth: 0 }}>
+                      <input type="checkbox" checked onChange={() => { setHasUnsaved(true); setForm({ ...form, conditions: (form.conditions ?? []).filter((term) => term.id !== condition.id) }); }} aria-label={`Include ${condition.title}`} style={{ accentColor: "var(--beige)" }} />
+                      <input value={condition.title} onChange={(e) => updateCondition(condition.id, { title: e.target.value })} aria-label="Condition title" style={{ ...inputStyle, flex: 1, minWidth: 0, padding: "5px 7px", fontWeight: 600 }} />
+                    </div>
+                    <select value={condition.category} onChange={(e) => updateCondition(condition.id, { category: e.target.value as QuoteServiceCategory })} aria-label="Condition category" style={{ ...selectStyle, width: 150, fontSize: 10 }}>
+                      {Object.entries(QUOTE_CATEGORY_LABELS).map(([key, label]) => <option key={key} value={key}>{label}</option>)}
+                    </select>
+                  </div>
+                  <textarea value={condition.text} onChange={(e) => updateCondition(condition.id, { text: e.target.value })} rows={2} aria-label={`Condition text: ${condition.title}`} style={{ ...inputStyle, width: "100%", resize: "vertical" }} />
+                </div>
+              ))}
+            </div>
+          ) : <p style={{ fontSize: 12, color: "var(--text-muted)", margin: "0 0 14px" }}>No conditions selected. Add only the ones that fit this project.</p>}
+
+          {([true, false] as const).map((suggested) => {
+            const templates = quoteDefaults.templates.filter((template) =>
+              suggested === suggestedCategories.includes(template.category)
+              && !(form.conditions ?? []).some((condition) => condition.templateId === template.id)
+            );
+            if (!templates.length) return null;
+            return (
+              <div key={String(suggested)} style={{ marginTop: 12 }}>
+                <h4 style={{ margin: "0 0 8px", fontSize: 11, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: 0.4 }}>
+                  {suggested ? "Suggested for these services" : "Other service categories"}
+                </h4>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 7 }}>
+                  {templates.map((template) => (
+                    <button key={template.id} type="button" onClick={() => addCondition(template)} style={{ ...btnSecondary, justifyContent: "flex-start", textAlign: "left", fontSize: 11, padding: "8px 10px" }}>
+                      <Plus size={12} /> {template.title} <span style={{ color: "var(--text-muted)" }}>· {QUOTE_CATEGORY_LABELS[template.category]}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+
+          <details style={{ marginTop: 18, borderTop: "1px solid var(--border)", paddingTop: 12 }}>
+            <summary style={{ cursor: "pointer", fontSize: 12, color: "var(--beige)" }}>Manage saved condition templates</summary>
+            <p style={{ fontSize: 11, color: "var(--text-muted)" }}>Edit or add reusable wording. Save explicitly to use these templates on future quotes; existing quotes keep their saved text.</p>
+            <div style={{ display: "grid", gap: 10 }}>
+              {templateDrafts.map((template, index) => (
+                <div key={template.id} style={{ border: "1px solid var(--border)", borderRadius: 6, padding: 10, display: "grid", gridTemplateColumns: "1fr 1fr auto", gap: 8 }}>
+                  <input aria-label="Template title" value={template.title} onChange={(e) => setTemplateDrafts((current) => current.map((item, i) => i === index ? { ...item, title: e.target.value } : item))} style={inputStyle} />
+                  <select aria-label="Template category" value={template.category} onChange={(e) => setTemplateDrafts((current) => current.map((item, i) => i === index ? { ...item, category: e.target.value as QuoteServiceCategory } : item))} style={selectStyle}>
+                    {Object.entries(QUOTE_CATEGORY_LABELS).map(([key, label]) => <option key={key} value={key}>{label}</option>)}
+                  </select>
+                  <button type="button" onClick={() => setTemplateDrafts((current) => current.filter((_, i) => i !== index))} style={btnSecondary}>Remove</button>
+                  <textarea aria-label="Template wording" value={template.text} onChange={(e) => setTemplateDrafts((current) => current.map((item, i) => i === index ? { ...item, text: e.target.value } : item))} rows={2} style={{ ...inputStyle, gridColumn: "1 / -1", width: "100%", resize: "vertical" }} />
+                </div>
+              ))}
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 10 }}>
+              <button type="button" onClick={() => setTemplateDrafts((current) => [...current, { id: `custom-${Date.now()}`, category: "general", title: "New condition", text: "" }])} style={btnSecondary}><Plus size={12} /> Add template</button>
+              <button type="button" onClick={saveTemplatesAsDefaults} style={btnPrimary}>Save templates as defaults</button>
+            </div>
+          </details>
+          {defaultsMessage && <p role="status" style={{ fontSize: 11, color: defaultsMessage.startsWith("Could") ? "var(--red-text)" : "var(--status-green)", marginBottom: 0 }}>{defaultsMessage}</p>}
         </Card>
 
         {/* Maintenance & Support Plans (optional, toggled per quote) */}

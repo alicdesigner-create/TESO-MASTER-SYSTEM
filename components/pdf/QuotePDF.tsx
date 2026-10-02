@@ -15,18 +15,18 @@ const C = {
 };
 
 const s = StyleSheet.create({
-  page: { backgroundColor: C.white, paddingHorizontal: 44, paddingTop: 40, paddingBottom: 56, fontFamily: "Helvetica", fontSize: 9, color: C.textDark },
+  page: { backgroundColor: C.white, paddingHorizontal: 44, paddingTop: 34, paddingBottom: 44, fontFamily: "Helvetica", fontSize: 9, color: C.textDark },
   // Header
-  header: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 },
+  header: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 },
   logoBox: { flexDirection: "column" },
   logoName: { fontSize: 17, fontFamily: "Helvetica-Bold", color: C.carbon, letterSpacing: 2 },
   logoSub: { fontSize: 7.5, color: C.textMuted, letterSpacing: 1, marginTop: 2 },
   logoContact: { fontSize: 7.5, color: C.textMuted, marginTop: 6, lineHeight: 1.7 },
   docLabel: { fontSize: 36, fontFamily: "Helvetica-Bold", color: C.carbon, letterSpacing: 3, textAlign: "right" },
   // Divider
-  divider: { borderBottom: 1, borderColor: C.border, marginVertical: 14 },
+  divider: { borderBottom: 1, borderColor: C.border, marginVertical: 10 },
   // Meta row
-  metaRow: { flexDirection: "row", justifyContent: "space-between", marginBottom: 18 },
+  metaRow: { flexDirection: "row", justifyContent: "space-between", marginBottom: 12 },
   metaLeft: { flexDirection: "column" },
   metaTag: { fontSize: 7, fontFamily: "Helvetica-Bold", color: C.beige, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 },
   metaClientName: { fontSize: 13, fontFamily: "Helvetica-Bold", color: C.carbon },
@@ -47,18 +47,21 @@ const s = StyleSheet.create({
   cellMuted: { fontSize: 8.5, color: C.textMuted },
   cellMono: { fontSize: 8.5, color: C.textDark, fontFamily: "Courier" },
   // Totals
-  totalsSection: { alignItems: "flex-end", marginTop: 10, marginBottom: 20 },
+  totalsSection: { alignItems: "flex-end", marginTop: 8, marginBottom: 12 },
   totalRow: { flexDirection: "row", width: 230, justifyContent: "space-between", paddingVertical: 4, borderBottom: 1, borderColor: "#eeeeee" },
   totalLabel: { fontSize: 8.5, color: C.textMuted },
   totalValue: { fontSize: 8.5, color: C.textDark, fontFamily: "Courier" },
   grandTotalBox: { flexDirection: "row", width: 230, justifyContent: "space-between", paddingVertical: 9, paddingHorizontal: 10, backgroundColor: C.carbon, marginTop: 5 },
   grandLabel: { fontSize: 11, fontFamily: "Helvetica-Bold", color: C.textPrimary },
   grandValue: { fontSize: 11, fontFamily: "Courier-Bold", color: C.beige },
+  paymentRow: { flexDirection: "row", width: 230, justifyContent: "space-between", paddingVertical: 4 },
+  paymentLabel: { fontSize: 8.5, color: C.textMuted },
+  paymentValue: { fontSize: 8.5, color: C.textDark, fontFamily: "Courier" },
   // Sections
-  sectionTitle: { fontSize: 8, fontFamily: "Helvetica-Bold", color: C.carbon, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6, paddingBottom: 4, borderBottom: 1, borderColor: C.border },
-  termText: { fontSize: 7.5, color: C.textMuted, lineHeight: 1.7, marginBottom: 3 },
-  notesText: { fontSize: 8, color: "#555555", lineHeight: 1.8 },
-  termBullet: { fontSize: 8, color: C.textMuted, lineHeight: 1.9, marginBottom: 7 },
+  sectionTitle: { fontSize: 8, fontFamily: "Helvetica-Bold", color: C.carbon, textTransform: "uppercase", letterSpacing: 1, marginBottom: 4, paddingBottom: 3, borderBottom: 1, borderColor: C.border },
+  termText: { fontSize: 7.5, color: C.textMuted, lineHeight: 1.55, marginBottom: 2 },
+  notesText: { fontSize: 8, color: "#555555", lineHeight: 1.45 },
+  termBullet: { fontSize: 8, color: C.textMuted, lineHeight: 1.55, marginBottom: 4 },
   // Maintenance plan cards — 2x2 comparison grid
   plansIntro: { fontSize: 7.5, color: C.textMuted, lineHeight: 1.6, marginBottom: 10 },
   plansGrid: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
@@ -72,9 +75,9 @@ const s = StyleSheet.create({
   planFeature: { fontSize: 7.3, color: C.textDark, lineHeight: 1.6, marginBottom: 2 },
   planNote: { fontSize: 6.8, color: C.textMuted, fontFamily: "Helvetica-Oblique", lineHeight: 1.5, marginTop: 7, paddingTop: 6, borderTop: 1, borderColor: C.border },
   // Signatures
-  sigSection: { flexDirection: "row", marginTop: 42, gap: 24 },
+  sigSection: { flexDirection: "row", marginTop: 22, gap: 24 },
   sigBlock: { flex: 1 },
-  sigLabel: { fontSize: 7, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 22 },
+  sigLabel: { fontSize: 7, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 14 },
   sigLine: { borderBottom: 1, borderColor: "#cccccc", marginBottom: 4 },
   sigName: { fontSize: 8, color: C.textMuted },
   // Footer
@@ -106,6 +109,13 @@ function buildTerms(validDays: number): string[] {
 }
 
 export default function QuotePDF({ quote, client }: Props) {
+  const terms = quote.conditions !== undefined
+    ? quote.conditions.map((condition) => condition.text)
+    : buildTerms(quote.validDays);
+  const hasDepositTerm = quote.conditions?.some((condition) => condition.templateId === "general-deposit");
+  const depositAmount = Math.round((quote.total * (quote.pricing?.depositPercent ?? 50) / 100 + Number.EPSILON) * 100) / 100;
+  const remainingBalance = Math.round((quote.total - depositAmount + Number.EPSILON) * 100) / 100;
+
   return (
     <Document>
       <Page size="LETTER" style={s.page}>
@@ -186,9 +196,23 @@ export default function QuotePDF({ quote, client }: Props) {
           </View>
         </View>
 
+        {hasDepositTerm && (
+          <View style={{ alignItems: "flex-end", marginTop: -8, marginBottom: 8 }}>
+            <Text style={s.sectionTitle}>Payment Schedule</Text>
+            <View style={s.paymentRow}>
+              <Text style={s.paymentLabel}>Deposit to begin ({quote.pricing?.depositPercent ?? 50}%)</Text>
+              <Text style={s.paymentValue}>{fmt(depositAmount)}</Text>
+            </View>
+            <View style={s.paymentRow}>
+              <Text style={s.paymentLabel}>Balance due at completion</Text>
+              <Text style={s.paymentValue}>{fmt(remainingBalance)}</Text>
+            </View>
+          </View>
+        )}
+
         {/* NOTES */}
         {quote.notes ? (
-          <View style={{ marginBottom: 18 }} wrap={false}>
+          <View style={{ marginBottom: 10 }}>
             <Text style={s.sectionTitle}>Notes</Text>
             <Text style={s.notesText}>{quote.notes}</Text>
           </View>
@@ -225,14 +249,15 @@ export default function QuotePDF({ quote, client }: Props) {
 
         {/* TERMS & ACCEPTANCE — flows after content; only pushed to a new page
             by react-pdf's automatic pagination if it doesn't fit. */}
-        <View wrap={false}>
+        {terms.length > 0 && (
+        <View>
           <Text style={s.sectionTitle}>Terms and Conditions</Text>
-          {buildTerms(quote.validDays).map((t, i) => (
+          {terms.map((t, i) => (
             <Text key={i} style={s.termBullet}>• {t}</Text>
           ))}
 
           {/* SIGNATURES */}
-          <View style={s.sigSection}>
+          <View style={s.sigSection} wrap={false}>
             <View style={s.sigBlock}>
               <Text style={s.sigLabel}>Prepared by</Text>
               <View style={s.sigLine} />
@@ -250,6 +275,7 @@ export default function QuotePDF({ quote, client }: Props) {
             </View>
           </View>
         </View>
+        )}
 
         {/* FOOTER */}
         <View style={s.footer} fixed>

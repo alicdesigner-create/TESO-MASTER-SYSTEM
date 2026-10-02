@@ -89,6 +89,22 @@ export interface QuoteItem {
   status?: QuoteItemStatus;
 }
 
+export type QuoteServiceCategory = "website" | "print" | "apparel" | "branding" | "general";
+
+export interface QuoteCondition {
+  id: string;
+  templateId?: string;
+  category: QuoteServiceCategory;
+  title: string;
+  text: string;
+}
+
+export interface QuotePricing {
+  depositPercent: number;
+  monthlyMaintenance: number;
+  hourlyRate: number;
+}
+
 export interface Quote {
   id: string;
   quoteNumber: string;           // formato "2026-001"
@@ -106,6 +122,8 @@ export interface Quote {
   createdAt: string;
   includeMaintenancePlans?: boolean; // default false — toggles the Maintenance & Support Plans section
   selectedMaintenancePlans?: string[]; // ids of plans marked as selected/included (see lib/maintenancePlans.ts); purely visual — does not affect pricing/totals
+  pricing?: QuotePricing; // Snapshot of the editable terms used for this quote.
+  conditions?: QuoteCondition[]; // Per-quote snapshots; an empty array means no terms were selected.
 }
 
 export interface InvoiceItem {

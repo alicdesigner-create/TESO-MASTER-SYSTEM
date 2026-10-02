@@ -448,5 +448,89 @@
     "id": "muamlitnc9cz3",
     "quoteNumber": "2026-019",
     "createdAt": "2026-09-21T02:28:17.675Z"
+  },
+  {
+    "status": "sent",
+    "date": "2026-10-01",
+    "validDays": 30,
+    "taxRate": 0,
+    "taxAmount": 0,
+    "items": [
+      {
+        "id": "muqbcx7i",
+        "qty": 1,
+        "description": "Custom website design for Sleeves Out, including a tattoo work gallery, studio information, location and contact details, and links to Facebook and Instagram. The design will feature a bold visual direction inspired by skull tattoo machines.",
+        "unitPrice": 850
+      }
+    ],
+    "subtotal": 850,
+    "total": 850,
+    "includeMaintenancePlans": false,
+    "clientId": "muqbcg82re9ly",
+    "id": "muqbcmgskdwak",
+    "quoteNumber": "2026-020",
+    "createdAt": "2026-10-02T01:57:45.531Z",
+    "updatedAt": "2026-10-02T03:32:10.929Z",
+    "selectedMaintenancePlans": [
+      "website-care"
+    ],
+    "notes": "Client-Provided Content: The client will provide the photos, videos, logo, written content, business details, social media links, and other digital files needed for the website. The client confirms they have permission to use the materials provided.\n\nFinal Review: Please provide written approval or final feedback within one week of delivery. If no response is received, one reminder will be sent, allowing one additional week to respond. After that, the project will be considered complete for billing purposes, and the remaining balance will be due.",
+    "pricing": {
+      "depositPercent": 50,
+      "monthlyMaintenance": 70,
+      "hourlyRate": 35
+    },
+    "conditions": [
+      {
+        "id": "general-deposit-muqd573e",
+        "templateId": "general-deposit",
+        "category": "general",
+        "title": "Deposit and balance",
+        "text": "A 50% deposit is required to begin. The remaining balance is due upon project completion."
+      },
+      {
+        "id": "general-validity-muqd58jy",
+        "templateId": "general-validity",
+        "category": "general",
+        "title": "Quote validity",
+        "text": "This quote is valid for 30 days."
+      },
+      {
+        "id": "website-scope-muqd5b31",
+        "templateId": "website-scope",
+        "category": "website",
+        "title": "Website scope",
+        "text": "This quote covers the website services listed above. Services outside this scope require a separate quote."
+      },
+      {
+        "id": "website-maintenance-muqd5i7l",
+        "templateId": "website-maintenance",
+        "category": "website",
+        "title": "Monthly maintenance",
+        "text": "After project completion, monthly maintenance is $70/month and includes website hosting plus minor adjustments and updates."
+      },
+      {
+        "id": "website-hourly-muqd5sp3",
+        "templateId": "website-hourly",
+        "category": "website",
+        "title": "Structural changes",
+        "text": "Structural website changes and work beyond minor updates are billed at $35/hour."
+      },
+      {
+        "id": "website-domain-muqd5ynu",
+        "templateId": "website-domain",
+        "category": "website",
+        "title": "Domain fees",
+        "text": "Domain registration and renewal fees are billed separately."
+      },
+      {
+        "id": "website-booking-muqd61af",
+        "templateId": "website-booking",
+        "category": "website",
+        "title": "Online booking",
+        "text": "Online booking functionality is not included unless it is listed in the scope. It can be added later as a separate feature."
+      }
+    ],
+    "convertedToInvoiceId": "muqdzqsl2rgau"
   }
 ]
