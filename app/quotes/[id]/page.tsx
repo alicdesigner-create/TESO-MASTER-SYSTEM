@@ -33,6 +33,10 @@ export default function QuoteDetailPage() {
     includeMaintenancePlans: false,
   });
   const [loading, setLoading] = useState(false);
+  const [showNewClient, setShowNewClient] = useState(false);
+  const [creatingClient, setCreatingClient] = useState(false);
+  const [newClient, setNewClient] = useState({ businessName: "", contactName: "", email: "", phone: "" });
+  const [clientError, setClientError] = useState("");
   const [hasUnsaved, setHasUnsaved] = useState(false);
   const isNew = id === "new";
 
@@ -65,6 +69,38 @@ export default function QuoteDetailPage() {
   }, [hasUnsaved]);
 
   const clientMap = Object.fromEntries(clients.map((c) => [c.id, c]));
+
+  const createClient = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newClient.businessName.trim() || !newClient.contactName.trim()) {
+      setClientError("Business name and contact name are required.");
+      return;
+    }
+    setCreatingClient(true);
+    setClientError("");
+    try {
+      const res = await apiFetch("/api/clients", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          businessName: newClient.businessName.trim(),
+          contactName: newClient.contactName.trim(),
+          email: newClient.email.trim(),
+          phone: newClient.phone.trim(),
+        }),
+      });
+      const created: Client = await res.json();
+      setClients((current) => [...current, created]);
+      setForm((current) => ({ ...current, clientId: created.id }));
+      setHasUnsaved(true);
+      setNewClient({ businessName: "", contactName: "", email: "", phone: "" });
+      setShowNewClient(false);
+    } catch (err) {
+      setClientError((err as Error).message);
+    } finally {
+      setCreatingClient(false);
+    }
+  };
 
   const recalc = (items: QuoteItem[], taxRate?: number) => {
     const subtotal = items.reduce((s, it) => s + it.qty * it.unitPrice, 0);
@@ -203,10 +239,29 @@ export default function QuoteDetailPage() {
         <Card>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
             <Field label="Client *">
-              <select value={form.clientId ?? ""} onChange={(e) => { setHasUnsaved(true); setForm({ ...form, clientId: e.target.value }); }} style={selectStyle}>
-                <option value="">Select...</option>
-                {clients.map((c) => <option key={c.id} value={c.id}>{c.businessName}</option>)}
-              </select>
+              <div style={{ display: "flex", gap: 6 }}>
+                <select value={form.clientId ?? ""} onChange={(e) => { setHasUnsaved(true); setForm({ ...form, clientId: e.target.value }); }} style={{ ...selectStyle, flex: 1, minWidth: 0 }}>
+                  <option value="">Select...</option>
+                  {clients.map((c) => <option key={c.id} value={c.id}>{c.businessName}</option>)}
+                </select>
+                <button type="button" onClick={() => { setShowNewClient((show) => !show); setClientError(""); }} style={btnSecondary} title="Create a client without leaving this quote">
+                  <Plus size={13} /> New
+                </button>
+              </div>
+              {showNewClient && (
+                <form onSubmit={createClient} style={{ marginTop: 10, padding: 12, border: "1px solid var(--border)", borderRadius: 6, backgroundColor: "var(--input-bg)", display: "grid", gap: 8 }}>
+                  <strong style={{ fontSize: 11, color: "var(--text-primary)" }}>New client</strong>
+                  <input autoFocus required aria-label="Business name" value={newClient.businessName} onChange={(e) => setNewClient({ ...newClient, businessName: e.target.value })} placeholder="Business name *" style={inputStyle} />
+                  <input required aria-label="Contact name" value={newClient.contactName} onChange={(e) => setNewClient({ ...newClient, contactName: e.target.value })} placeholder="Contact name *" style={inputStyle} />
+                  <input type="email" aria-label="Email" value={newClient.email} onChange={(e) => setNewClient({ ...newClient, email: e.target.value })} placeholder="Email (optional)" style={inputStyle} />
+                  <input type="tel" aria-label="Phone" value={newClient.phone} onChange={(e) => setNewClient({ ...newClient, phone: e.target.value })} placeholder="Phone (optional)" style={inputStyle} />
+                  {clientError && <span role="alert" style={{ color: "var(--red-text)", fontSize: 11 }}>{clientError}</span>}
+                  <div style={{ display: "flex", justifyContent: "flex-end", gap: 6 }}>
+                    <button type="button" onClick={() => { setShowNewClient(false); setClientError(""); }} style={btnSecondary}>Cancel</button>
+                    <button type="submit" disabled={creatingClient} style={btnPrimary}>{creatingClient ? "Creating..." : "Create & Select"}</button>
+                  </div>
+                </form>
+              )}
             </Field>
             <Field label="Quote Number">
               <input value={form.quoteNumber ?? ""} onChange={(e) => { setHasUnsaved(true); setForm({ ...form, quoteNumber: e.target.value }); }} placeholder="2026-001" style={inputStyle} />

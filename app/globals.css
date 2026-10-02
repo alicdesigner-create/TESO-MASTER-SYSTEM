@@ -61,6 +61,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-width: auto;
+  scrollbar-color: #a8896d #e3e0db;
+}
+
 body {
   background-color: var(--bg-page);
   color: var(--text-primary);
@@ -69,18 +74,20 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 14px;
+  height: 14px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-page);
+  background: #e3e0db;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 3px;
+  background: #a8896d;
+  border: 3px solid #e3e0db;
+  border-radius: 8px;
+  min-height: 36px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+  background: #80664f;
 }
 
 input, textarea, select {
