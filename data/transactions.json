@@ -851,5 +851,37 @@
     "description": "workspace for studio@tesographics.com October 2026",
     "notes": "Paid with the new Debit card of teso 5071",
     "id": "muqa1mrh0c8ti"
+  },
+  {
+    "type": "expense",
+    "date": "2026-10-05",
+    "category": "Domain Names",
+    "paymentMethod": "Mastercard 9764 (Teso)",
+    "vendor": "GO daddy",
+    "amount": 31.38,
+    "clientId": "client-jesse",
+    "description": "Domain : era303co.com",
+    "notes": "Dominio para jesse website (primera transacción hecha con la tarjeta de crédito Mastercard 9764 TESO.)",
+    "id": "muw5if1p17cc1"
+  },
+  {
+    "type": "income",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 40,
+    "date": "2026-10-02",
+    "description": "Invoice #2026-33 - Pro Luxury Facility Services",
+    "clientId": "client-andres",
+    "invoiceId": "mu3p21vu6gla4",
+    "id": "muwdmcnmachw6"
+  },
+  {
+    "type": "income",
+    "date": "2026-10-06",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 188,
+    "clientId": "client-jennifer",
+    "description": "Invoice #2026-38",
+    "notes": "Monthly Maintenance - Web and Landing Page month of Oct 2026\n\nGoogle workspace - Month of Oct 2026 Corporate email sales@midninghtshinecleaners.com)\n\nGoogle workspace - Month of Oct 2026 Corporate email (billing@midninghtshinecleaners.com)\n",
+    "id": "muxjrkwk8dkgt"
   }
 ]

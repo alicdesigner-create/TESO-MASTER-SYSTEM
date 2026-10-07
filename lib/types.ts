@@ -218,6 +218,7 @@ export const DESIGN_TYPES = [
 
 export const PAYMENT_METHODS = [
   "Visa 8985 (Teso)",
+  "Mastercard 9764 (Teso)",
   "Visa 9854 (personal)",
   "Dulce",
   "Cash",

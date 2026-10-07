@@ -112,5 +112,14 @@
     "phone": "386 205 5353",
     "id": "muqbcg82re9ly",
     "createdAt": "2026-10-02T01:57:37.442Z"
+  },
+  {
+    "businessName": "TESO GRAPHICS",
+    "contactName": "Alirio C",
+    "email": "Studio@tesographics.com",
+    "phone": "3035253023",
+    "notes": "This cliente is teso graphics itself ",
+    "id": "muw5k92rpm0k2",
+    "createdAt": "2026-10-06T04:02:20.787Z"
   }
 ]

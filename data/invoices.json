@@ -563,7 +563,7 @@
     "clientId": "client-andres",
     "date": "2026-09-22",
     "dueDate": "2026-09-22",
-    "status": "unpaid",
+    "status": "paid",
     "subtotal": 40,
     "total": 40,
     "items": [
@@ -578,7 +578,9 @@
     "id": "mu3p21vu6gla4",
     "invoiceNumber": "2026-33",
     "createdAt": "2026-09-16T06:02:44.874Z",
-    "updatedAt": "2026-09-16T06:03:11.048Z"
+    "updatedAt": "2026-10-06T07:48:00.846Z",
+    "paidAt": "2026-10-06",
+    "paidAmount": 40
   },
   {
     "clientId": "mqbuj4ich7ocr",
@@ -653,5 +655,77 @@
     "createdAt": "2026-10-02T03:11:43.461Z",
     "updatedAt": "2026-10-02T03:50:00.288Z",
     "notes": "Due upon receipt. This invoice covers the 50% project deposit of $425 under Quote #2026-020. Work will begin once payment is received."
+  },
+  {
+    "status": "unpaid",
+    "date": "2026-10-06",
+    "dueDate": "2026-10-10",
+    "items": [
+      {
+        "id": "muwczhqk",
+        "description": "Website design and development, including contact form and Formspree integration",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 800
+      },
+      {
+        "id": "muwd0o6w",
+        "description": "Domain registration for a two-year term",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 51.38
+      },
+      {
+        "id": "muwd1b87",
+        "description": "Google Workspace setup for business email: info@era303co.com",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 0
+      }
+    ],
+    "subtotal": 851.38,
+    "total": 851.38,
+    "clientId": "client-jesse",
+    "notes": "Optional monthly service: $60/month starting November 6, 2026, if you choose the managed payment option. Otherwise, Google Workspace billing will be paid directly by the client $50",
+    "id": "muwdgimcfcygs",
+    "invoiceNumber": "2026-37",
+    "createdAt": "2026-10-06T07:43:23.460Z",
+    "updatedAt": "2026-10-06T07:44:19.854Z"
+  },
+  {
+    "clientId": "client-jennifer",
+    "date": "2026-10-06",
+    "dueDate": "2026-10-05",
+    "status": "paid",
+    "subtotal": 188,
+    "total": 188,
+    "items": [
+      {
+        "id": "muwdq0m2kc27",
+        "description": "Monthly Maintenance - Web and Landing Page month of Oct 2026",
+        "amount": 170,
+        "qty": 1
+      },
+      {
+        "id": "muwdq0m2g02m",
+        "description": "Google workspace - Month of Oct 2026 Corporate email (sales@midninghtshinecleaners.com)",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 9
+      },
+      {
+        "id": "muwdq0m2sp9k",
+        "description": "Google workspace - Month of Oct 2026 Corporate email (billing@midninghtshinecleaners.com)",
+        "qty": 1,
+        "unitPrice": 0,
+        "amount": 9
+      }
+    ],
+    "id": "muwdq0mh42b4a",
+    "invoiceNumber": "2026-38",
+    "createdAt": "2026-10-06T07:50:46.697Z",
+    "updatedAt": "2026-10-07T03:02:43.515Z",
+    "paidAt": "2026-10-06",
+    "paidAmount": 188
   }
 ]
