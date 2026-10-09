@@ -873,5 +873,37 @@
     "clientId": "client-andres",
     "invoiceId": "mu3p21vu6gla4",
     "id": "muwdmcnmachw6"
+  },
+  {
+    "type": "income",
+    "date": "2026-10-06",
+    "category": "Web Design – Recurring / Maintenance",
+    "amount": 188,
+    "clientId": "client-jennifer",
+    "description": "Invoice #2026-38",
+    "notes": "Monthly Maintenance - Web and Landing Page month of Oct 2026\n\nGoogle workspace - Month of Oct 2026 Corporate email sales@midninghtshinecleaners.com)\n\nGoogle workspace - Month of Oct 2026 Corporate email (billing@midninghtshinecleaners.com)\n",
+    "id": "muxjrkwk8dkgt"
+  },
+  {
+    "type": "expense",
+    "date": "2026-09-01",
+    "category": "Google Workspace",
+    "paymentMethod": "Visa 8985 (Teso)",
+    "vendor": "Google",
+    "amount": 17.5,
+    "clientId": "client-jennifer",
+    "description": "invoice 5665458756 (Google Workspace for Jennifer, August 2026)",
+    "id": "mv0eafkssxri0"
+  },
+  {
+    "type": "expense",
+    "date": "2026-10-08",
+    "category": "Google Workspace",
+    "paymentMethod": "Mastercard 9764 (Teso)",
+    "vendor": "Google",
+    "amount": 17.5,
+    "clientId": "client-jennifer",
+    "description": "Invoice number: 5708559660  (Google Workspace for Jennifer, September 2026)",
+    "id": "mv0esao6t0ksr"
   }
 ]
